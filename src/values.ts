@@ -1,4 +1,5 @@
 export interface Value {
+    key: string,
     name: string,
     description: string,
     options: Array<string>,
@@ -7,6 +8,7 @@ export interface Value {
 
 function workValues(): Value {
     return {
+        key: "work",
         name: "Work Values",
         description: "Our work values are what we care about at work and some other stuff too.",
         options: ["one", "two", "three", "four"],
@@ -16,6 +18,7 @@ function workValues(): Value {
 
 function coreLifeValues(): Value {
     return {
+        key: "core",
         name: "Core Life Values",
         description: "Our work values are what we care about at work and some other stuff too.",
         options: ["one", "two", "three", "four"],
@@ -24,6 +27,7 @@ function coreLifeValues(): Value {
 
 function leadershipValues(): Value {
     return {
+        key: "leadership",
         name: "Leadership Values",
         description: "Our work values are what we care about at work and some other stuff too.",
         options: ["one", "two", "three", "four"],
@@ -32,6 +36,7 @@ function leadershipValues(): Value {
 
 function relationshipValues(): Value {
     return {
+        key: "relationships",
         name: "Relationship Values",
         description: "Our work values are what we care about at work and some other stuff too.",
         options: ["one", "two", "three", "four"],
@@ -40,6 +45,7 @@ function relationshipValues(): Value {
 
 function wellnessValues(): Value {
     return {
+        key: "wellness",
         name: "Health & Wellness Values",
         description: "Our work values are what we care about at work and some other stuff too.",
         options: ["one", "two", "three", "four"],
