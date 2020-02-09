@@ -14,7 +14,7 @@ export class App extends React.Component {
         <div className="content">
           <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/option:id" component={Options}></Route>
+          <Route path="/option:key" component={Options}></Route>
           </Switch>
         </div>
       </Router>
@@ -39,13 +39,9 @@ interface ValueOptionProps {
 }
 
 class ValueOption extends React.Component<ValueOptionProps>  {
-
-
   render () {
-
-
     return (
-      <Link to={`/options:${this.props.value.key}`}>
+      <Link to={`/option${this.props.value.key}`}>
       <button className="optionButton">
         <div className="option">
           <div className="optionTitle">{this.props.value.name}</div>
