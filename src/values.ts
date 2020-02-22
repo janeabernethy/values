@@ -19,7 +19,7 @@ function workValues(): Value {
         key: "work",
         name: "Work",
         description: "What is important to me in my career?",
-        options: ["one", "two", "three", "four"],
+        options: [],
         class: "workOption",
         image: workPuzzle,
     }
@@ -30,7 +30,7 @@ function coreLifeValues(): Value {
         key: "core",
         name: "Core Life",
         description: "What is important to me in my life?",
-        options: ["one", "two", "three", "four"],
+        options: [],
         class: "coreOption",
         image: corePuzzle,
     }
@@ -41,7 +41,7 @@ function leadershipValues(): Value {
         key: "leadership",
         name: "Leadership",
         description: "What is important to me in leadership style?",
-        options: ["one", "two", "three", "four"],
+        options: [],
         class: "leadershipOption",
         image: leadershipPuzzle,
     }
@@ -52,7 +52,7 @@ function relationshipValues(): Value {
         key: "relationships",
         name: "Relationship",
         description: "What is important to me in my relationship?",
-        options: ["one", "two", "three", "four"],
+        options: [],
         class: "relationshipOption",
         image: relationshipPuzzle,
     }
@@ -63,7 +63,7 @@ function wellnessValues(): Value {
         key: "wellness",
         name: "Health & Wellness",
         description: "What is important to me in health & fitness?",
-        options: ["one", "two", "three", "four"],
+        options: [],
         class: "welnessOption",
         image: healthPuzzle,
     }

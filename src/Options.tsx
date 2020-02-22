@@ -1,49 +1,37 @@
-import React,  { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import { Value, getValues } from './values';
+import React, { ChangeEvent, FormEvent } from 'react';
+import { getValues } from './values';
+import { InputtedValues, updateInputValue, valuesCount, valuesToArray } from './inputtedValues'
 import { RouteComponentProps } from 'react-router-dom';
 import './Options.css';
-import { threadId } from 'worker_threads';
+
 
 type OptionsProps = { key: string };
-type OptionsState = { values: Map<string, string>, count: number};
-export class Options extends React.Component<RouteComponentProps<OptionsProps>, OptionsState> { 
+type OptionsState = { values: Map<string, string>, count: number, inputtedValues: InputtedValues};
+export class Options extends React.Component<RouteComponentProps<OptionsProps>> { 
   constructor(props: RouteComponentProps<OptionsProps>) {
     super(props);
     let myMap = new Map();
 
-    this.state = {values: myMap, count: 0};
+    const inputtedValues = {} as InputtedValues;
+    this.state =  inputtedValues;
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  submitDisabled() {
-    var values = {...this.state.values}
-    return this.state.count < 5
+   submitDisabled() {
+     return valuesCount(this.state) < 5
   }
 
  handleChange(event: ChangeEvent<HTMLInputElement>) {
     const target = event.target;
-    const name = target.name;
-
-    var values = {...this.state.values}
-    var count = this.state.count
-
-    if(target.value.length == 0) {
-      count--;
-      this.setState({count: count})
-    }
-  
-    if(values[name] == null || values[name].length == 0) {
-      count++;
-      this.setState({count: count})
-    }
-
-    values[name] = target.value;
-    this.setState({values})
+    var updatedValues = updateInputValue(this.state, target.name, target.value)
+    this.setState(updatedValues)
   }
 
  handleSubmit(event: FormEvent<HTMLFormElement>) {
+    const inputArray = valuesToArray(this.state)
+    console.log(inputArray)
     event.preventDefault();
   }
 
