@@ -4,31 +4,43 @@ import { RouteComponentProps } from 'react-router-dom';
 import './Options.css';
 import { threadId } from 'worker_threads';
 
-type TParams = { key: string };
-export class Options extends React.Component<RouteComponentProps<TParams>> { 
-  constructor(props: RouteComponentProps<TParams>) {
+type OptionsProps = { key: string };
+type OptionsState = { values: Map<string, string>, count: number};
+export class Options extends React.Component<RouteComponentProps<OptionsProps>, OptionsState> { 
+  constructor(props: RouteComponentProps<OptionsProps>) {
     super(props);
     let myMap = new Map();
 
-    this.state = {values: myMap};
+    this.state = {values: myMap, count: 0};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   submitDisabled() {
-
-    console.log("Sub disabled")
-    return true 
+    var values = {...this.state.values}
+    return this.state.count < 5
   }
 
  handleChange(event: ChangeEvent<HTMLInputElement>) {
     const target = event.target;
     const name = target.name;
-    this.setState({
-      [name]: target.value
-    });
 
+    var values = {...this.state.values}
+    var count = this.state.count
+
+    if(target.value.length == 0) {
+      count--;
+      this.setState({count: count})
+    }
+  
+    if(values[name] == null || values[name].length == 0) {
+      count++;
+      this.setState({count: count})
+    }
+
+    values[name] = target.value;
+    this.setState({values})
   }
 
  handleSubmit(event: FormEvent<HTMLFormElement>) {
