@@ -18,7 +18,7 @@ function workValues(): Value {
     return {
         key: "work",
         name: "Work",
-        description: "Our work values are what we care about at work and some other stuff too.",
+        description: "What is important to me in my career?",
         options: ["one", "two", "three", "four"],
         class: "workOption",
         image: workPuzzle,
@@ -29,7 +29,7 @@ function coreLifeValues(): Value {
     return {
         key: "core",
         name: "Core Life",
-        description: "Our work values are what we care about at work and some other stuff too.",
+        description: "What is important to me in my life?",
         options: ["one", "two", "three", "four"],
         class: "coreOption",
         image: corePuzzle,
@@ -40,7 +40,7 @@ function leadershipValues(): Value {
     return {
         key: "leadership",
         name: "Leadership",
-        description: "Our work values are what we care about at work and some other stuff too.",
+        description: "What is important to me in leadership style?",
         options: ["one", "two", "three", "four"],
         class: "leadershipOption",
         image: leadershipPuzzle,
@@ -51,7 +51,7 @@ function relationshipValues(): Value {
     return {
         key: "relationships",
         name: "Relationship",
-        description: "Our work values are what we care about at work and some other stuff too.",
+        description: "What is important to me in my relationship?",
         options: ["one", "two", "three", "four"],
         class: "relationshipOption",
         image: relationshipPuzzle,
@@ -62,7 +62,7 @@ function wellnessValues(): Value {
     return {
         key: "wellness",
         name: "Health & Wellness",
-        description: "Our work values are what we care about at work and some other stuff too.",
+        description: "What is important to me in health & fitness?",
         options: ["one", "two", "three", "four"],
         class: "welnessOption",
         image: healthPuzzle,

@@ -1,19 +1,35 @@
-.optionsContent {
+.optionsInputContainer {
+    padding-left: 32px;
+    padding-top: 44px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .optionsHeader {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #545454;
+    text-align: left;
+}
+
+.optionsPanel {
+    min-width: 320px;
 }
 
 .optionsDescription {
     font-size: 14px;
     font-weight: normal;
-    text-align: center;
+    text-align: left;
+    padding-top: 16px;
 }
+
+.optionsRules {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    padding-top: 8px;
+}
+
 .optionsList {
     display: flex;
     flex-wrap: wrap;
@@ -22,9 +38,27 @@
     margin: 20px;
 }
 
-.valueInput {
+.optionsInput {
+    display: block;
     width: 100%;
+    padding-right: 32px;
+
+}
+
+.valueInput {
+    padding-left: 8px;
+    display: block;
+    margin-bottom: 12px;
+    height: 40px;
+    background-color: rgba(216, 216, 216, 0.3);
+    color: #545454;
     border: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 32px;
+    width: 100%;
+    box-sizing: border-box;
+    background-clip: padding-box;
 }
 
 .optionsValue {
@@ -36,4 +70,20 @@
     text-align: center;
     vertical-align: middle;
     line-height: 60px;
+  }
+
+  .valueSubmit {
+    background: #395BDC;
+    color: white;
+    border: transparent;
+    height: 44px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    float: right;
+  }
+
+  .valueSubmit:disabled {
+      background-color: #D9D9D9;
   }
