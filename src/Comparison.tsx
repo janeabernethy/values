@@ -2,8 +2,8 @@ import React  from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { getValues } from './values';
 import './Comparison.css';
-import { throws } from 'assert';
-
+import divide from './Images/Divide.png'; 
+import restart from './Images/Restart.png'
 
 type ComparisonProps = { key: string } ;
 type ComparisonState = { 
@@ -19,8 +19,7 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
     constructor(props: RouteComponentProps<ComparisonProps>, state: ComparisonState) {
         super(props);
     
-        const key = this.props.match.params.key
-        const currentOption = getValues().filter(value => value.key === key)[0];
+    
 
         var callback = (arr: Array<string>) : void => {
             console.log("sorted " + this.state.innerStrings)
@@ -37,20 +36,37 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
 
         this.selectOption1 = this.selectOption1.bind(this);
         this.selectOption2 = this.selectOption2.bind(this);
-
+        this.reset = this.reset.bind(this);
     }
 
     componentDidMount() {
-        this.outerLoop(1, ["22", "70", "36", "40"], this.state.innerCompletion)
+        const key = this.props.match.params.key
+        const currentOption = getValues().filter(value => value.key === key)[0];
+        this.outerLoop(1, currentOption.options, this.state.innerCompletion)
     }
 
-   
+    reset() {
+        this.setState({optionA:"", optionB:"", innerValue:"", innerStrings: [] as string[], innerPosition: 1})
+        const key = this.props.match.params.key
+        const currentOption = getValues().filter(value => value.key === key)[0];
+        this.outerLoop(1, currentOption.options, this.state.innerCompletion)
+    }
 
     render() {
         return(
             <div>
-                <button className="inputOptionButton" onClick={this.selectOption1}>{this.state.optionA}</button>
-                <button className="inputOptionButton" onClick={this.selectOption2}>{this.state.optionB}</button>
+                <div className="comparisonTitle">Choose which value is more important for you</div>
+                <div className="comparisonGrid">
+                    <button className="inputOptionButton" onClick={this.selectOption1}>{this.state.optionA}</button>
+                    <img className="divide" src={divide} alt=""/>
+                    <button className="inputOptionButton" onClick={this.selectOption2}>{this.state.optionB}</button>
+                </div>
+                <button className="restartButton" onClick={this.reset}>
+                    <div className="restartButtonDiv">
+                    <img className="restartImg" src={restart} alt=""/>
+                    <div className="restartText">Start again</div>
+                    </div>
+                </button>
             </div>
         )
     }
