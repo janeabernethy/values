@@ -4,7 +4,7 @@ import { Value, getValues } from './values';
 import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Comparison } from './Comparison'
 import { Options } from './Options'
-
+import  Results  from './Results'
 
 var classNames = require('classnames');
 
@@ -17,6 +17,7 @@ export class App extends React.Component {
           <Route path="/" exact component={Home}/>
           <Route path="/option:key" component={Options}/>
           <Route path="/comparison:key" component={Comparison}/>
+          <Route path="/results:key" component={Results} />
           </Switch>
         </div>
       </Router>

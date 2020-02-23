@@ -22,7 +22,10 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
     
 
         var callback = (arr: Array<string>) : void => {
-            console.log("sorted " + this.state.innerStrings)
+            const key = this.props.match.params.key
+            const currentOption = getValues().filter(value => value.key === key)[0];
+            currentOption.options = this.state.innerStrings
+            this.props.history.push({pathname: `/results${this.props.match.params.key}`})
         }
 
         this.state = {

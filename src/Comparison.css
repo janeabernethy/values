@@ -1,0 +1,61 @@
+.inputOptionButton {
+    background: transparent;
+    border: transparent;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.comparisonTitle {
+    color: #545454;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 88px;
+    text-align: center;
+}
+
+.divide {
+    width: 134px;
+    height: 225px;
+}
+
+.comparisonGrid {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-column-gap: 24px;
+    padding-top: 96px;
+    padding-left: 104px;
+    padding-right: 104px;
+
+}
+
+.restartButton {
+    background: transparent;
+    border: transparent;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    padding-top: 80px;
+
+}
+
+.restartImg {
+    float: left;
+    width: 18px;
+    height: 21px;
+}
+
+.restartText {
+    float: right;
+    padding-left: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #545454;
+    padding-top: 2px;
+}
+
+.restartButtonDiv {
+display: inline-block;
+
+}
