@@ -96,6 +96,5 @@ export function valuesCount(values: InputtedValues) {
     if (values.ten != null) {
         count++
     }
-    console.log(count)
     return count
 }

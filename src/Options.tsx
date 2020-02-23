@@ -1,17 +1,15 @@
 import React, { ChangeEvent, FormEvent } from 'react';
 import { getValues } from './values';
 import { InputtedValues, updateInputValue, valuesCount, valuesToArray } from './inputtedValues'
+import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router-dom';
 import './Options.css';
 
 
 type OptionsProps = { key: string };
-type OptionsState = { values: Map<string, string>, count: number, inputtedValues: InputtedValues};
 export class Options extends React.Component<RouteComponentProps<OptionsProps>> { 
   constructor(props: RouteComponentProps<OptionsProps>) {
     super(props);
-    let myMap = new Map();
-
     const inputtedValues = {} as InputtedValues;
     this.state =  inputtedValues;
 
@@ -31,8 +29,11 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
 
  handleSubmit(event: FormEvent<HTMLFormElement>) {
     const inputArray = valuesToArray(this.state)
-    console.log(inputArray)
+    const key = this.props.match.params.key
+    const currentOption = getValues().filter(value => value.key === key)[0];
+    currentOption.options = inputArray
     event.preventDefault();
+    this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
   }
 
   render() {
@@ -47,16 +48,16 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
         </div>
         <div className="optionsInput">
           <form onSubmit={this.handleSubmit}>
-            <input name="one" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
-            <input name="two" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="one"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="two"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="three" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
-            <input name="four" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
-            <input name="five" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
-            <input name="six" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="four"  className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="five"  className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="six"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="seven" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="eight" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
-            <input name="nine" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
-            <input name="ten" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="nine"  className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
+            <input name="ten"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input type="submit" className="valueSubmit" value="Next" disabled={this.submitDisabled()}/>
         </form>
       </div>

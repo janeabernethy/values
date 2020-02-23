@@ -2,7 +2,7 @@ import React,  { MouseEvent } from 'react';
 import './App.css';
 import { Value, getValues } from './values';
 import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
+import { Comparison } from './Comparison'
 import { Options } from './Options'
 
 
@@ -14,8 +14,9 @@ export class App extends React.Component {
       <Router>
         <div className="content">
           <Switch>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/option:key" component={Options}></Route>
+          <Route path="/" exact component={Home}/>
+          <Route path="/option:key" component={Options}/>
+          <Route path="/comparison:key" component={Comparison}/>
           </Switch>
         </div>
       </Router>

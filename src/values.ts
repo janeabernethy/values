@@ -14,67 +14,57 @@ export interface Value {
     image: string,
 }
 
-function workValues(): Value {
-    return {
-        key: "work",
-        name: "Work",
-        description: "What is important to me in my career?",
-        options: [],
-        class: "workOption",
-        image: workPuzzle,
-    }
-}
+export var workValues = {
+    key: "work",
+    name: "Work",
+    description: "What is important to me in my career?",
+    options: [],
+    class: "workOption",
+    image: workPuzzle
+} as Value
 
-function coreLifeValues(): Value {
-    return {
-        key: "core",
-        name: "Core Life",
-        description: "What is important to me in my life?",
-        options: [],
-        class: "coreOption",
-        image: corePuzzle,
-    }
-}
+export var coreLifeValues = {
+    key: "core",
+    name: "Core Life",
+    description: "What is important to me in my life?",
+    options: [],
+    class: "coreOption",
+    image: corePuzzle,
+} as Value
 
-function leadershipValues(): Value {
-    return {
-        key: "leadership",
-        name: "Leadership",
-        description: "What is important to me in leadership style?",
-        options: [],
-        class: "leadershipOption",
-        image: leadershipPuzzle,
-    }
-}
+export var leadershipValues = {
+    key: "leadership",
+    name: "Leadership",
+    description: "What is important to me in leadership style?",
+    options: [],
+    class: "leadershipOption",
+    image: leadershipPuzzle
+} as Value
 
-function relationshipValues(): Value {
-    return {
-        key: "relationships",
-        name: "Relationship",
-        description: "What is important to me in my relationship?",
-        options: [],
-        class: "relationshipOption",
-        image: relationshipPuzzle,
-    }
-}
+export var relationshipValues = {
+    key: "relationships",
+    name: "Relationship",
+    description: "What is important to me in my relationship?",
+    options: [],
+    class: "relationshipOption",
+    image: relationshipPuzzle
+} as Value
 
-function wellnessValues(): Value {
-    return {
-        key: "wellness",
-        name: "Health & Wellness",
-        description: "What is important to me in health & fitness?",
-        options: [],
-        class: "welnessOption",
-        image: healthPuzzle,
-    }
-}
+
+export var wellnessValues = { 
+    key: "wellness", 
+    name: "Health & Wellness", 
+    description: "What is important to me in health & fitness?",
+    options: [],
+    class: "welnessOption",
+    image: healthPuzzle } as Value
 
 export function getValues(): Array<Value> {
     return [
-        coreLifeValues(),
-        workValues(),
-        leadershipValues(),
-        wellnessValues(),
-        relationshipValues(),
+        coreLifeValues,
+        workValues,
+        leadershipValues,
+        wellnessValues,
+        relationshipValues,
     ]
 }
