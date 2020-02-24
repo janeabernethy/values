@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/values/static/css/main.b7fef0fc.chunk.css",
+    "main.js": "/values/static/js/main.a11fe076.chunk.js",
+    "main.js.map": "/values/static/js/main.a11fe076.chunk.js.map",
+    "runtime-main.js": "/values/static/js/runtime-main.fec2084b.js",
+    "runtime-main.js.map": "/values/static/js/runtime-main.fec2084b.js.map",
+    "static/js/2.1d79fadf.chunk.js": "/values/static/js/2.1d79fadf.chunk.js",
+    "static/js/2.1d79fadf.chunk.js.map": "/values/static/js/2.1d79fadf.chunk.js.map",
+    "index.html": "/values/index.html",
+    "precache-manifest.afaae0f19224ae186b47c2601385d348.js": "/values/precache-manifest.afaae0f19224ae186b47c2601385d348.js",
+    "service-worker.js": "/values/service-worker.js",
+    "static/css/main.b7fef0fc.chunk.css.map": "/values/static/css/main.b7fef0fc.chunk.css.map",
+    "static/js/2.1d79fadf.chunk.js.LICENSE.txt": "/values/static/js/2.1d79fadf.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/values/static/media/BackgroundImage.2715209e.png",
+    "static/media/Divide.png": "/values/static/media/Divide.0153d036.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fec2084b.js",
+    "static/js/2.1d79fadf.chunk.js",
+    "static/css/main.b7fef0fc.chunk.css",
+    "static/js/main.a11fe076.chunk.js"
+  ]
+}
