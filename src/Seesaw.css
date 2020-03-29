@@ -1,0 +1,61 @@
+.seesawHeader {
+    font-size: 20;
+    font-weight: bold;
+    padding: 40px;
+    color: #545454;
+}
+
+.seesawAddValueContainer {
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.seesawInstruction {
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    color: #545454;
+}
+
+.seesawForm {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    width: 100%;
+    align-content: space-between;
+}
+
+.seesawValueInput {
+    color: #545454;
+    border: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #D8D8D8;
+    padding-bottom: 0;
+    margin: 0;
+    height: 26px;
+
+}
+
+ .sawsawInstructionCol1 {
+    width: 100%;
+}
+
+.seesawValueSubmit {
+    background: #395BDC;
+    color: white;
+    border: transparent;
+    height: 44px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+}
