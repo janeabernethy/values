@@ -66,12 +66,9 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
     onSubmit(event: FormEvent<HTMLFormElement>) {
         this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1})
         if(this.state.stepNumber === 2) {
-            console.log("here")
             const key = this.props.match.params.key
             const currentOption = getValues().filter(value => value.key === key)[0];
-            console.log(currentOption.options)
             const updatedOptions = currentOption.options.concat(this.state.items)
-            console.log(updatedOptions)
             currentOption.options = updatedOptions
             event.preventDefault();
             this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})

@@ -1,3 +1,4 @@
+import { stringify } from "querystring";
 
 export interface InputtedValues {
     one?: string,
@@ -13,17 +14,24 @@ export interface InputtedValues {
 }
 
 export function updateInputValue(values: InputtedValues, key: string, newValue?: string) {
+    var val;
+    if (newValue == undefined || newValue.length === 0) {
+        val = undefined;
+    }
+    else {
+        val = newValue;
+    }
     switch(key) {
-        case "one": values.one = newValue ; break;
-        case "two": values.two = newValue; break;
-        case "three": values.three = newValue; break;
-        case "four": values.four = newValue; break;
-        case "five": values.five = newValue; break;
-        case "six": values.six = newValue; break;
-        case "seven": values.seven = newValue; break;
-        case "eight": values.eight = newValue; break;
-        case "nine": values.nine = newValue; break;
-        case "ten": values.ten = newValue; break;
+        case "one": values.one = val ; break;
+        case "two": values.two = val; break;
+        case "three": values.three = val; break;
+        case "four": values.four = val; break;
+        case "five": values.five = val; break;
+        case "six": values.six = val; break;
+        case "seven": values.seven = val; break;
+        case "eight": values.eight = val; break;
+        case "nine": values.nine = val; break;
+        case "ten": values.ten = val; break;
         default: break;
     }
     return values
