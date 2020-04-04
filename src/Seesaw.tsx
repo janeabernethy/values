@@ -26,21 +26,24 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>> {
         //const currentOption = getValues().filter(value => value.key === key)[0];
         const values = ["cheap", "fun environment", "team enviornment", "eating helathy", "realistic", "feeling good", "convenient", "looking good", "strength", "good sleep"]
         return(
-            <div className="content">
-                <div className="seesawHeader">You are given 2 options with the extact same values: </div>
-                
-                <div className="seesawAddValueContainer">
+            <div className="seesawContent">
+                <div className="seesawLeft">
+                    <div className="seesawHeader">Your values</div>
+                    <div className="seesawInstructions">
+                        <p className="seesawInstruction">You are given two sets of options that contain the same values </p>
+                        <p className="seesawInstruction">What is one value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                    </div>
                     <div className="seesawInput">
                     <form className="seesawForm">
-                        <div className="sawsawInstructionCol1">
-                            <div className="seesawInstruction">What is one thing that would make option 2 the most attractive?</div>
                             <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value"/>
-                        </div>
-                        <div className="sawsawInstructionCol2">
-                            <input type="submit" className="valueSubmit" value="Next"/>
-                        </div>
+                            <div className="seesawSubmitDiv">
+                            <input type="submit" className="seesawValueSubmit" value="Next"/>
+                            </div>
                     </form>
                 </div>
+                </div>
+                <div className="seesawRight">
+
                 </div>
             </div>
         )
