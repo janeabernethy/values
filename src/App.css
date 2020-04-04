@@ -54,6 +54,8 @@ html {
   border-radius: 8px;
 }
 
+
+
 .optionImage {
   padding-left: 24px;
   display: block;
@@ -91,6 +93,10 @@ html {
   height: 175px;
   overflow: hidden;
   cursor: pointer;
+}
+
+.optionButton:focus {
+  outline:0;
 }
 
 .welnessOption {

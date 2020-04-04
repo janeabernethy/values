@@ -44,6 +44,10 @@
 
 }
 
+.restartButton:focus {
+    outline:0;
+}
+
 .restartImg {
     float: left;
     width: 18px;

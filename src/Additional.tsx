@@ -2,20 +2,20 @@ import React, { ChangeEvent, FormEvent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import {  valuesToArray } from './inputtedValues'
 import { getValues } from './values';
-import './Seesaw.css'
+import './Additional.css'
 import {
     withRouter
   } from 'react-router-dom'
 
-type SeesawProps = { key: string } ;
+type AdditionalValueProps = { key: string } ;
 
-interface SeesawState {
+interface AdditionalValueState {
     items: string[]; 
     stepNumber: number;
   }
 
-class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawState> {
-    constructor(props: RouteComponentProps<SeesawProps>) {
+class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValueProps>, AdditionalValueState> {
+    constructor(props: RouteComponentProps<AdditionalValueProps>) {
         super(props);       
         this.state = {items: [], stepNumber:0}
         this.handleItemAdded = this.handleItemAdded.bind(this);
@@ -100,53 +100,53 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
         //const currentOption = getValues().filter(value => value.key === key)[0];
         const values = ["cheap", "fun environment", "team enviornment", "eating helathy", "realistic", "feeling good", "convenient", "looking good", "strength", "good sleep"]
         return(
-            <div className="seesawContent">
-                <div className="seesawLeft">
-                    <div className="seesawHeader">Your values</div>
-                    <div className="seesawInstructions">
-                        <p className="seesawInstruction">You are given two sets of options that contain the same values </p>
-                        <p className="seesawInstruction">What is one value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+            <div className="additionalContent">
+                <div className="additionalLeft">
+                    <div className="additionalHeader">Your values</div>
+                    <div className="additionalInstructions">
+                        <p className="additionalInstruction">You are given two sets of options that contain the same values </p>
+                        <p className="additionalInstruction">What is one value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
                     </div>
-                    <div className="seesawInput">
+                    <div className="additionalInput">
                     <div>
-                    <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input1Disabled()}/>
-                        <div className="seesawSubmitDiv">
-                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit1Hidden()}/>
+                    <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="one"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input1Disabled()}/>
+                        <div className="additionalSubmitDiv">
+                            <input type="submit" className="additionalValueSubmit" value="Next" hidden={this.submit1Hidden()}/>
                         </div>
                     </form>
                     </div>
                     <div hidden={this.step2Hidden()}>
-                    <div className="seesawInstructions">
-                        <p className="seesawInstruction">Now both lists have FOO added</p>
-                        <p className="seesawInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                    <div className="additionalInstructions">
+                    <p className="additionalInstruction">Now both lists have <b>{this.state.items[0]}</b> added</p>
+                        <p className="additionalInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
                     </div>
-                    <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="two"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
-                        <div className="seesawSubmitDiv">
-                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit2Hidden()}/>
+                    <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="two"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
+                        <div className="additionalSubmitDiv">
+                            <input type="submit" className="additionalValueSubmit" value="Next" hidden={this.submit2Hidden()}/>
                         </div>
                     </form>
                     </div>
                     <div hidden={this.step3Hidden()}>
-                    <div className="seesawInstructions">
-                        <p className="seesawInstruction">Now both lists have FOO added</p>
-                        <p className="seesawInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                    <div className="additionalInstructions">
+                        <p className="additionalInstruction">Now both lists have <b>{this.state.items[1]}</b> added</p>
+                        <p className="additionalInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
                     </div>
-                    <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="three"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
-                        <div className="seesawSubmitDiv">
-                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit3Hidden()}/>
+                    <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="three"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                        <div className="additionalSubmitDiv">
+                            <input type="submit" className="additionalValueSubmit" value="Next" hidden={this.submit3Hidden()}/>
                         </div>
                     </form>
                     </div>
                 </div>
                 </div>
-                <div className="seesawRight">
+                <div className="additionalRight">
 
                 </div>
             </div>
         )
     }
 }
-export default withRouter(Seesaw)
+export default withRouter(AdditonalValues)

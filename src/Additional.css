@@ -1,36 +1,30 @@
-.seesawContent {
+.additionalContent {
     display: flex;
     flex-direction: row;
 }
-.seesawLeft {
+.additionalLeft {
     padding: 40px 0px 40px 40px;
     min-width: 240px;
 }
 
-.seesawRight {
+.additionalRight {
     width: 100%;
 }
 
-.seesawHeader {
+.additionalHeader {
     font-size: 20px;
     font-weight: bold;
     color: #545454;
 }
 
-/* .seesawForm {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-} */
-
-.seesawInstruction {
+.additionalInstruction {
     font-size: 14px;
     font-weight: normal;
     text-align: left;
     color: #545454;
 }
 
-.seesawValueInput {
+.additionalValueInput {
     color: #545454;
     border: transparent;
     font-size: 14px;
@@ -41,12 +35,12 @@
     margin-top: auto;
     width: 100%;
 }
-.seesawSubmitDiv {
+.additionalSubmitDiv {
     padding-top: 20px;
     position: relative;
     float: right;
 }
-.seesawValueSubmit {
+.additionalValueSubmit {
     background: #395BDC;
     color: white;
     border: transparent;
@@ -57,7 +51,7 @@
     border-radius: 4px;
   }
 
-  .seesawValueInput:disabled {
+  .additionalValueInput:disabled {
       border: none;
       /* color: #6F3BE4; */
   }
