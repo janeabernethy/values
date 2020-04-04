@@ -1,5 +1,6 @@
-import React  from 'react';
+import React, { ChangeEvent, FormEvent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { InputtedValues } from './inputtedValues'
 import { getValues } from './values';
 import './Seesaw.css'
 import {
@@ -8,13 +9,37 @@ import {
 
 type SeesawProps = { key: string } ;
 
+interface SeesawState {
+    items: string[]; //replace any with suitable type
+    value: string;
+  }
 
-class Seesaw extends React.Component<RouteComponentProps<SeesawProps>> {
+class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawState> {
     constructor(props: RouteComponentProps<SeesawProps>) {
         super(props);
-    
-        // this.home = this.home.bind(this);
+        const inputtedValues: Array<string> = [];
+       
+        this.state = {items: [], value:""}
+        this.handleFirstAdded = this.handleFirstAdded.bind(this);
 
+    }
+
+    handleFirstAdded(event: ChangeEvent<HTMLInputElement>) {
+        const target = event.target;
+        const value = target.value;
+        if (value.length == 0) {
+            this.setState({items:[], value:''});
+        }
+        else {
+            this.setState({items:[value], value:''});
+        }
+      }
+
+      submitHidden() {
+
+
+        const len = this.state.items.length
+        return len == 0
     }
 
     home() {
@@ -34,10 +59,10 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>> {
                         <p className="seesawInstruction">What is one value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
                     </div>
                     <div className="seesawInput">
-                    <form className="seesawForm">
-                            <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value"/>
+                    <form className="seesawForm" autoComplete="off">
+                            <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleFirstAdded}/>
                             <div className="seesawSubmitDiv">
-                            <input type="submit" className="seesawValueSubmit" value="Next"/>
+                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submitHidden()}/>
                             </div>
                     </form>
                 </div>
