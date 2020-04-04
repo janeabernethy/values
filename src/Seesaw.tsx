@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { InputtedValues } from './inputtedValues'
+import {  valuesToArray } from './inputtedValues'
 import { getValues } from './values';
 import './Seesaw.css'
 import {
@@ -10,17 +10,17 @@ import {
 type SeesawProps = { key: string } ;
 
 interface SeesawState {
-    items: string[]; //replace any with suitable type
+    items: string[]; 
     stepNumber: number;
   }
 
 class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawState> {
     constructor(props: RouteComponentProps<SeesawProps>) {
-        super(props);
-        const inputtedValues: Array<string> = [];
-       
+        super(props);       
         this.state = {items: [], stepNumber:0}
         this.handleItemAdded = this.handleItemAdded.bind(this);
+        this.input1Disabled = this.input1Disabled.bind(this);
+        this.input2Disabled = this.input2Disabled.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
 
@@ -47,7 +47,6 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
 
     submit2Hidden() {
         if (this.state.stepNumber === 1) {
-            console.log(this.state.items)
             return this.state.items.length < 2
         }
         else {
@@ -66,7 +65,20 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
 
     onSubmit(event: FormEvent<HTMLFormElement>) {
         this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1})
-        event.preventDefault();
+        if(this.state.stepNumber === 2) {
+            console.log("here")
+            const key = this.props.match.params.key
+            const currentOption = getValues().filter(value => value.key === key)[0];
+            console.log(currentOption.options)
+            const updatedOptions = currentOption.options.concat(this.state.items)
+            console.log(updatedOptions)
+            currentOption.options = updatedOptions
+            event.preventDefault();
+            this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
+        }
+        else {
+            event.preventDefault();
+        }
 
     }
 
@@ -78,6 +90,13 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
         return this.state.stepNumber < 2
     }
 
+    input1Disabled() {
+        return this.state.stepNumber > 0
+    }
+
+    input2Disabled() {
+        return this.state.stepNumber > 1
+    }
 
     render() {
         const key = this.props.match.params.key
@@ -94,7 +113,7 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
                     <div className="seesawInput">
                     <div>
                     <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                        <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input1Disabled()}/>
                         <div className="seesawSubmitDiv">
                             <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit1Hidden()}/>
                         </div>
@@ -106,7 +125,7 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
                         <p className="seesawInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
                     </div>
                     <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="two"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                        <input name="two"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
                         <div className="seesawSubmitDiv">
                             <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit2Hidden()}/>
                         </div>

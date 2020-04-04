@@ -33,7 +33,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
     const currentOption = getValues().filter(value => value.key === key)[0];
     currentOption.options = inputArray
     event.preventDefault();
-    this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
+    this.props.history.push({pathname: `/seesaw${this.props.match.params.key}`})
   }
 
   render() {
@@ -47,7 +47,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
           <div className="optionsRules">Add at least 5 values</div>
         </div>
         <div className="optionsInput">
-          <form onSubmit={this.handleSubmit}>
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
             <input name="one"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="two"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="three" className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
