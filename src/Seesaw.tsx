@@ -11,7 +11,7 @@ type SeesawProps = { key: string } ;
 
 interface SeesawState {
     items: string[]; //replace any with suitable type
-    value: string;
+    stepNumber: number;
   }
 
 class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawState> {
@@ -19,32 +19,65 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
         super(props);
         const inputtedValues: Array<string> = [];
        
-        this.state = {items: [], value:""}
-        this.handleFirstAdded = this.handleFirstAdded.bind(this);
-
+        this.state = {items: [], stepNumber:0}
+        this.handleItemAdded = this.handleItemAdded.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    handleFirstAdded(event: ChangeEvent<HTMLInputElement>) {
-        const target = event.target;
-        const value = target.value;
-        if (value.length == 0) {
-            this.setState({items:[], value:''});
+    handleItemAdded(event: ChangeEvent<HTMLInputElement>) {
+        const value = event.target.value;
+        if (value.length === 0) {
+            return;
         }
         else {
-            this.setState({items:[value], value:''});
+            var updatedItems  = Object.assign([], this.state.items) as Array<string>
+            updatedItems[this.state.stepNumber] = value
+            this.setState({items:updatedItems, stepNumber:this.state.stepNumber});
         }
       }
 
-      submitHidden() {
-
-
-        const len = this.state.items.length
-        return len == 0
+    submit1Hidden() {
+        if (this.state.stepNumber === 0) {
+            return this.state.items.length === 0
+        }
+        else {
+            return true
+        }
     }
 
-    home() {
-        // this.props.history.push('/')
+    submit2Hidden() {
+        if (this.state.stepNumber === 1) {
+            console.log(this.state.items)
+            return this.state.items.length < 2
+        }
+        else {
+            return true
+        }
     }
+
+    submit3Hidden() {
+        if (this.state.stepNumber === 2) {
+            return this.state.items.length === 2
+        }
+        else {
+            return true
+        }
+    }
+
+    onSubmit(event: FormEvent<HTMLFormElement>) {
+        this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1})
+        event.preventDefault();
+
+    }
+
+    step2Hidden() {
+        return this.state.stepNumber < 1
+    }
+
+    step3Hidden() {
+        return this.state.stepNumber < 2
+    }
+
 
     render() {
         const key = this.props.match.params.key
@@ -59,12 +92,38 @@ class Seesaw extends React.Component<RouteComponentProps<SeesawProps>, SeesawSta
                         <p className="seesawInstruction">What is one value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
                     </div>
                     <div className="seesawInput">
-                    <form className="seesawForm" autoComplete="off">
-                            <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleFirstAdded}/>
-                            <div className="seesawSubmitDiv">
-                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submitHidden()}/>
-                            </div>
+                    <div>
+                    <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="one"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                        <div className="seesawSubmitDiv">
+                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit1Hidden()}/>
+                        </div>
                     </form>
+                    </div>
+                    <div hidden={this.step2Hidden()}>
+                    <div className="seesawInstructions">
+                        <p className="seesawInstruction">Now both lists have FOO added</p>
+                        <p className="seesawInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                    </div>
+                    <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="two"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                        <div className="seesawSubmitDiv">
+                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit2Hidden()}/>
+                        </div>
+                    </form>
+                    </div>
+                    <div hidden={this.step3Hidden()}>
+                    <div className="seesawInstructions">
+                        <p className="seesawInstruction">Now both lists have FOO added</p>
+                        <p className="seesawInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                    </div>
+                    <form className="seesawForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="three"  className="seesawValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                        <div className="seesawSubmitDiv">
+                            <input type="submit" className="seesawValueSubmit" value="Next" hidden={this.submit3Hidden()}/>
+                        </div>
+                    </form>
+                    </div>
                 </div>
                 </div>
                 <div className="seesawRight">
