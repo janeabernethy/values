@@ -71,6 +71,10 @@
 .optionBlock {
     width: 70px;
     height: 36px;
+    line-height: 36px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .optionBlock img {
@@ -108,4 +112,16 @@
 .blockC {
     position: absolute;
     left: 35px;
+}
+
+.blockText {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* display: inline-block; */
 }

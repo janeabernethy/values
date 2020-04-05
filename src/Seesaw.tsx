@@ -59,7 +59,10 @@ interface Seesaw1OptionProps {
     render () {
       return (
         <div className="options1Set">
-            <div className="optionBlock blockC"><img src={blockShaded} /></div>
+            <div className="optionBlock blockC">
+                <span className="blockText">{this.props.value}</span>
+                <img src={blockShaded} />
+            </div>
         </div>
       )
     }
@@ -72,28 +75,35 @@ interface Seesaw1OptionProps {
   
   class Seesaw2Option extends React.Component<Seesaw2OptionProps>  {
     render () {
-        console.log("IN 2")
-        console.log(this.props.index % 3.0)
-    var shouldRender = this.props.index % 3 < 2
-    var hasNext = (this.props.index + 1) < this.props.items.length
-    if (shouldRender == true && hasNext) {
-        return (
-            <div className="options2Set">
-                <div className="optionBlock blockA"><img src={blockFull} /></div>
-                <div className="optionBlock blockB"><img src={blockShaded} /></div>
+        var shouldRender = this.props.index % 3 < 2
+        var hasNext = (this.props.index + 1) < this.props.items.length
+        if (shouldRender == true && hasNext) {
+            return (
+                <div className="options2Set">
+                    <div className="optionBlock blockA">
+                        <span className="blockText">{this.props.items[this.props.index]}</span>
+                        <img src={blockFull} />
+                    </div>
+                    <div className="optionBlock blockB">
+                        <span className="blockText">{this.props.items[this.props.index+1]}</span>
+                        <img src={blockShaded} />
+                    </div>
+                </div>
+            )
+        }
+        else if(shouldRender == true) {
+            return (
+            <div className="options1Set">
+                <div className="optionBlock blockC">
+                    <div className="blockText">{this.props.items[this.props.index]}</div>
+                    <img src={blockShaded} />
+                </div>
             </div>
-          )
-    }
-    else if(shouldRender == true) {
-        return (
-        <div className="options1Set">
-            <div className="optionBlock blockC"><img src={blockShaded} /></div>
-        </div>
-        )
-    }
-    else {
-        return <div></div>
-    }
-      
-    }
+            )
+        }
+        else {
+            return <div></div>
+        }
+        
+        }
   }

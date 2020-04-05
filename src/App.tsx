@@ -32,7 +32,7 @@ const Home = () => (
     
     <div className="content">
      
-      <Seesaw items={["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]}/>
+      <Seesaw items={["having a really good gym and dog and stuff", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]}/>
     {/* <div className="header">Select an area of values you work on</div>
     <div className="description">Our values are our principles, ethics, priorities in a given context. They determine what is important to us and what we care about. Our motivation levels are linked to our values. We can feel our energy increase when our values are being met and conversely we can struggle with motivation when our values are not present.</div>
     <div className="options">
