@@ -109,7 +109,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         )
     }
 
-     addOption(newValue: string, count: number) {
+     addOption(newValue: string, count: number, callback: () => void) {
         
         const addedATime = 0.5
         const addedADelay = 0.2
@@ -184,7 +184,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         GSAP.TweenMax.to(firstValueA, resetTime, {bottom: 403, delay: resetDelay})
         GSAP.TweenMax.to(secondValueA, resetTime, {bottom: 449, delay: resetDelay})
         GSAP.TweenMax.to(optionsB, resetTime, {bottom: 83, delay: resetDelay})
-        GSAP.TweenMax.to(firstValueB, resetTime, {bottom: 403, delay:resetDelay})
+        GSAP.TweenMax.to(firstValueB, resetTime, {bottom: 403, delay:resetDelay, onComplete: callback})
         GSAP.TweenMax.to(secondValueB, resetTime, {bottom: 449, delay:resetDelay})
     }
 }

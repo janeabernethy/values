@@ -7,6 +7,7 @@ import {
     withRouter
   } from 'react-router-dom'
   import { Seesaw, SeesawProps } from './Seesaw'
+import { throws } from 'assert';
 
 type AdditionalValueProps = { key: string } ;
 
@@ -14,6 +15,8 @@ interface AdditionalValueState {
     items: string[]; 
     stepNumber: number;
     seesaw: Seesaw
+    step2Hidden: boolean
+    step3Hidden: boolean
   }
 
 class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValueProps>, AdditionalValueState> {
@@ -23,7 +26,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
         const currentOption = getValues().filter(value => value.key === key)[0];
         const items = currentOption.options
 
-        this.state = {items: [], stepNumber:0, seesaw: new Seesaw({items: items}, {items: items})}
+        this.state = {items: [], stepNumber:0, seesaw: new Seesaw({items: items}, {items: items}), step2Hidden: true, step3Hidden: true}
         this.handleItemAdded = this.handleItemAdded.bind(this);
         this.input1Disabled = this.input1Disabled.bind(this);
         this.input2Disabled = this.input2Disabled.bind(this);
@@ -70,35 +73,35 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
     }
 
     onSubmit(event: FormEvent<HTMLFormElement>) {
-        console.log("A")
        
-        this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1})
+        this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1, step2Hidden: this.state.step2Hidden, step3Hidden: this.state.step3Hidden})
     
-        this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber)
-        console.log(this.state.stepNumber)
-        if(this.state.stepNumber === 2) {
-            console.log("b")
-            const key = this.props.match.params.key
-            const currentOption = getValues().filter(value => value.key === key)[0];
-            const updatedOptions = currentOption.options.concat(this.state.items)
-            currentOption.options = updatedOptions
-            event.preventDefault();
-            this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
-        }
-        else {
-            console.log("c")
-            event.preventDefault();
-        }
+        this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber, () => {
+            if(this.state.stepNumber === 1) {
+                this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: false, step3Hidden: this.state.step3Hidden})
+            }
+            if(this.state.stepNumber === 2) {
+                this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: false, step3Hidden: false})
+            }
+
+            if(this.state.stepNumber === 3) {
+                const key = this.props.match.params.key
+                const currentOption = getValues().filter(value => value.key === key)[0];
+                const updatedOptions = currentOption.options.concat(this.state.items)
+                currentOption.options = updatedOptions
+                event.preventDefault();
+                this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
+            }
+        })
         event.preventDefault();
-
     }
 
-    step2Hidden() {
-        return this.state.stepNumber < 1
+    isStep2Hidden() {
+        return this.state.step2Hidden
     }
 
-    step3Hidden() {
-        return this.state.stepNumber < 2
+    isStep3Hidden() {
+        return this.state.step3Hidden
     }
 
     input1Disabled() {
@@ -130,7 +133,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                         </div>
                     </form>
                     </div>
-                    <div hidden={this.step2Hidden()}>
+                    <div hidden={this.isStep2Hidden()}>
                     <div className="additionalInstructions">
                     <p className="additionalInstruction">Now both lists have <b>{this.state.items[0]}</b> added</p>
                         <p className="additionalInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
@@ -142,7 +145,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                         </div>
                     </form>
                     </div>
-                    <div hidden={this.step3Hidden()}>
+                    <div hidden={this.isStep3Hidden()}>
                     <div className="additionalInstructions">
                         <p className="additionalInstruction">Now both lists have <b>{this.state.items[1]}</b> added</p>
                         <p className="additionalInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
