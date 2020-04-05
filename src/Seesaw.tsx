@@ -4,12 +4,10 @@ import seesawBase from './Images/Seesaw/SeesawBase.png';
 import swingyPart from './Images/Seesaw/SwingyPart.png'; 
 import sideA from './Images/Seesaw/SideA.png'; 
 import sideB from './Images/Seesaw/SideB.png'; 
-import blockShadedA from './Images/Seesaw/BlockShadedHalfA.png'; 
-import blockShadedB from './Images/Seesaw/BlockShadedHalfB.png'; 
-import blockFullA from './Images/Seesaw/BlockFullHalfA.png'; 
-import blockFullB from './Images/Seesaw/BlockFullHalfB.png'; 
 import blockFull from './Images/Seesaw/BlockFull.png'; 
 import blockShaded from './Images/Seesaw/BlockShaded.png'; 
+import blockAdded from './Images/Seesaw/BlockAdded.png'; 
+import * as GSAP from 'gsap';
 
 export type SeesawProps = { 
     items: Array<string>
@@ -23,21 +21,31 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         super(props);
     }
 
+    componentDidMount() {
+        console.log("did mount")
+        this.addOption()
+    }
 
     render() {
- 
-
-
-
         return (
         <div className="seesawContent">
             <div className="seesawWrapper">
+                <div className="seeesawSectionA">
+                <div id="addedOptionA" className="addedOptionA">
+                    <div className="options1Set">
+                        <div className="optionBlock blockC">
+                            <span className="blockText">Added</span>
+                            <img src={blockAdded} />
+                        </div>
+                    </div>
+                </div>
                 <div className="seesawOptionsA">
                     {
                         this.props.items.map((object, i) => 
                           i %3 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option items={this.props.items} index={i} />            
                         )
                     }
+                </div>
                 </div>
                 <div className="seesawOptionsB">
                     {
@@ -55,6 +63,12 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
             </div>
         </div>
         )
+    }
+
+    addOption() {
+        const addedA = document.getElementById("addedOptionA");
+        console.log(addedA)
+        //  GSAP.TweenMax.to(addedA, 1.0, {delay: 0.1, visible: true})
     }
 }
 
