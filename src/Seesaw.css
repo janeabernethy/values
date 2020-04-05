@@ -67,3 +67,45 @@
     height: auto;
     box-sizing: border-box;
 }
+
+.optionBlock {
+    width: 70px;
+    height: 36px;
+}
+
+.optionBlock img {
+    max-width: 100%;
+
+}
+
+.seesawOptionsA {
+    width: 150px;
+    left: -18px;
+    width: 150px;
+    position: absolute;
+    bottom: 86px;
+}
+
+.options1Set {
+    width:140px;
+    height: 35px;
+}
+.options2Set {
+    width:140px;
+    height: 35px;
+}
+
+.blockA {
+    position: absolute;
+    left: 0;
+}
+
+.blockB {
+    position: absolute;
+    left: 67px;
+}
+
+.blockC {
+    position: absolute;
+    left: 35px;
+}
