@@ -150,42 +150,49 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         aText.innerText = newValue
         bText.innerText = newValue
 
-        const fadeInA = count === 0 ? firstValueA : secondValueA
-        const fadeInB = count === 0 ? firstValueB : secondValueB
-        GSAP.TweenMax.to(fadeInA, addedATime, {opacity: 1, delay: addedADelay})
+        if(count < 2) {
+            const fadeInA = count === 0 ? firstValueA : secondValueA
+            const fadeInB = count === 0 ? firstValueB : secondValueB
+            GSAP.TweenMax.to(fadeInA, addedATime, {opacity: 1, delay: addedADelay})
 
-        const swingyPart = document.getElementById("seesawSwingyPart")
-        GSAP.TweenMax.to(swingyPart, offsetTime, {rotation: -15, delay: offsetDelay})
+            const swingyPart = document.getElementById("seesawSwingyPart")
+            GSAP.TweenMax.to(swingyPart, offsetTime, {rotation: -15, delay: offsetDelay})
 
-        const sideA = document.getElementById("seesawSideA")
-        GSAP.TweenMax.to(sideA, offsetTime, {bottom: -offset, delay: offsetDelay})
+            const sideA = document.getElementById("seesawSideA")
+            GSAP.TweenMax.to(sideA, offsetTime, {bottom: -offset, delay: offsetDelay})
 
-        const sideB = document.getElementById("seesawSideB")
-        GSAP.TweenMax.to(sideB, offsetTime, {bottom: offset, delay: offsetDelay})
+            const sideB = document.getElementById("seesawSideB")
+            GSAP.TweenMax.to(sideB, offsetTime, {bottom: offset, delay: offsetDelay})
 
-        const optionsA = document.getElementById("seesawOptionsA")
-        GSAP.TweenMax.to(optionsA, offsetTime, {bottom: 83-offset, delay: offsetDelay})
+            const optionsA = document.getElementById("seesawOptionsA")
+            GSAP.TweenMax.to(optionsA, offsetTime, {bottom: 83-offset, delay: offsetDelay})
 
-        GSAP.TweenMax.to(firstValueA, offsetTime, {bottom: 403-offset, delay: offsetDelay})
-        GSAP.TweenMax.to(secondValueA, offsetTime, {bottom: 449-offset, delay: offsetDelay})
+            GSAP.TweenMax.to(firstValueA, offsetTime, {bottom: 403-offset, delay: offsetDelay})
+            GSAP.TweenMax.to(secondValueA, offsetTime, {bottom: 449-offset, delay: offsetDelay})
 
-        GSAP.TweenMax.to(firstValueB, offsetTime, {bottom: 403+offset, delay: offsetDelay})
-        GSAP.TweenMax.to(secondValueB, offsetTime, {bottom: 449+offset, delay: offsetDelay})
+            GSAP.TweenMax.to(firstValueB, offsetTime, {bottom: 403+offset, delay: offsetDelay})
+            GSAP.TweenMax.to(secondValueB, offsetTime, {bottom: 449+offset, delay: offsetDelay})
 
-        const optionsB = document.getElementById("seesawOptionsB")
-        GSAP.TweenMax.to(optionsB, offsetTime, {bottom: 83+offset, delay: offsetDelay})
+            const optionsB = document.getElementById("seesawOptionsB")
+            GSAP.TweenMax.to(optionsB, offsetTime, {bottom: 83+offset, delay: offsetDelay})
 
-        GSAP.TweenMax.to(fadeInB, addedBTime, {opacity: 1, delay:addedBDelay})
+            GSAP.TweenMax.to(fadeInB, addedBTime, {opacity: 1, delay:addedBDelay})
 
-        GSAP.TweenMax.to(swingyPart, resetTime, {rotation: 0, delay: resetDelay})
-        GSAP.TweenMax.to(sideA, resetTime, {bottom: 0, delay: resetDelay})
-        GSAP.TweenMax.to(sideB, resetTime, {bottom: 0, delay: resetDelay})
-        GSAP.TweenMax.to(optionsA, resetTime, {bottom: 83, delay: resetDelay})
-        GSAP.TweenMax.to(firstValueA, resetTime, {bottom: 403, delay: resetDelay})
-        GSAP.TweenMax.to(secondValueA, resetTime, {bottom: 449, delay: resetDelay})
-        GSAP.TweenMax.to(optionsB, resetTime, {bottom: 83, delay: resetDelay})
-        GSAP.TweenMax.to(firstValueB, resetTime, {bottom: 403, delay:resetDelay, onComplete: callback})
-        GSAP.TweenMax.to(secondValueB, resetTime, {bottom: 449, delay:resetDelay})
+            GSAP.TweenMax.to(swingyPart, resetTime, {rotation: 0, delay: resetDelay})
+            GSAP.TweenMax.to(sideA, resetTime, {bottom: 0, delay: resetDelay})
+            GSAP.TweenMax.to(sideB, resetTime, {bottom: 0, delay: resetDelay})
+            GSAP.TweenMax.to(optionsA, resetTime, {bottom: 83, delay: resetDelay})
+            GSAP.TweenMax.to(firstValueA, resetTime, {bottom: 403, delay: resetDelay})
+            GSAP.TweenMax.to(secondValueA, resetTime, {bottom: 449, delay: resetDelay})
+            GSAP.TweenMax.to(optionsB, resetTime, {bottom: 83, delay: resetDelay})
+            GSAP.TweenMax.to(firstValueB, resetTime, {bottom: 403, delay:resetDelay, onComplete: callback})
+            GSAP.TweenMax.to(secondValueB, resetTime, {bottom: 449, delay:resetDelay})
+        }
+        else {
+            GSAP.TweenMax.to(thirdValueA, addedATime, {opacity: 1, delay: addedADelay})
+            GSAP.TweenMax.to(thirdValueB, addedATime, {opacity: 1, delay: addedADelay})
+            GSAP.TweenMax.to(thirdValueA, 1, {opacity: 1, delay: addedADelay + addedATime, onComplete: callback})
+        }
     }
 }
 

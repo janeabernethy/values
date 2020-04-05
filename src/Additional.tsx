@@ -119,10 +119,9 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
         return(
             <div className="additionalContent">
                 <div className="additionalLeft">
-                    <div className="additionalHeader">Your values</div>
+                    <div className="additionalHeader">Your {currentOption.name} Values</div>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">You are given two sets of options that contain the same values </p>
-                        <p className="additionalInstruction">What is one value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                        <p className="additionalInstruction">If you had all these values in your {currentOption.name.toLowerCase()}, what else could I offer you on top of your existing values to cause you to jump over to something new?</p>
                     </div>
                     <div className="additionalInput">
                     <div>
@@ -135,8 +134,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     </div>
                     <div hidden={this.isStep2Hidden()}>
                     <div className="additionalInstructions">
-                    <p className="additionalInstruction">Now both lists have <b>{this.state.items[0]}</b> added</p>
-                        <p className="additionalInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                    <p className="additionalInstruction">Now both options include <b>{this.state.items[0]}</b>.</p>
+                        <p className="additionalInstruction">What else could I offer you on top of your existing values to cause you to jump over to something new?</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="two"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
@@ -147,8 +146,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     </div>
                     <div hidden={this.isStep3Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Now both lists have <b>{this.state.items[1]}</b> added</p>
-                        <p className="additionalInstruction">What is one more value that you could add to Option Set 1 to make it more attractive than Option Set 2?</p>
+                        <p className="additionalInstruction">Now both options include <b>{this.state.items[1]}</b>.</p>
+                        <p className="additionalInstruction">What else could I offer you on top of your existing values to cause you to jump over to something new?</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="three"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
