@@ -39,6 +39,13 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                         )
                     }
                 </div>
+                <div className="seesawOptionsB">
+                    {
+                        this.props.items.map((object, i) => 
+                          i %3 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option items={this.props.items} index={i} />            
+                        )
+                    }
+                </div>
                 <div className="seesawBottomSection">
                     <div className="seesawSideA"><img className="seesawSideAImg" src={sideA} /></div>
                     <div className="seesawSideB"><img className="seesawSideBImg" src={sideB} /></div>
@@ -95,7 +102,7 @@ interface Seesaw1OptionProps {
             return (
             <div className="options1Set">
                 <div className="optionBlock blockC">
-                    <div className="blockText">{this.props.items[this.props.index]}</div>
+                    <span className="blockText">{this.props.items[this.props.index]}</span>
                     <img src={blockShaded} />
                 </div>
             </div>
