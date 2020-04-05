@@ -22,8 +22,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
     }
 
     componentDidMount() {
-        console.log("did mount")
-        this.addOption()
+        this.addOption("loyalty")
     }
 
     render() {
@@ -31,11 +30,27 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         <div className="seesawContent">
             <div className="seesawWrapper">
                 <div className="seeesawSectionA">
-                <div id="addedOptionA" className="addedOptionA">
+                <div id="addedOptionA3" className="addedOptionA3">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
                             <span className="blockText">Added</span>
-                            <img src={blockAdded} />
+                            <img id="addedImage1" src={blockAdded} />
+                        </div>
+                    </div>
+                </div>
+                <div id="addedOptionA2" className="addedOptionA2">
+                    <div className="options1Set">
+                        <div className="optionBlock blockC">
+                            <span className="blockText">Added</span>
+                            <img id="addedImage1" src={blockAdded} />
+                        </div>
+                    </div>
+                </div>
+                <div id="addedOptionA1" className="addedOptionA1">
+                    <div className="options1Set">
+                        <div className="optionBlock blockC">
+                            <span id="addedOptionA1Text" className="blockText">Added</span>
+                            <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
                 </div>
@@ -47,10 +62,26 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                     }
                 </div>
                 </div>
-                <div id="addedOptionB" className="addedOptionB">
+                <div id="addedOptionB3" className="addedOptionB3">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
                             <span className="blockText">Added</span>
+                            <img src={blockAdded} />
+                        </div>
+                    </div>
+                </div>
+                <div id="addedOptionB2" className="addedOptionB2">
+                    <div className="options1Set">
+                        <div className="optionBlock blockC">
+                            <span className="blockText">Added</span>
+                            <img src={blockAdded} />
+                        </div>
+                    </div>
+                </div>
+                <div id="addedOptionB1" className="addedOptionB1">
+                    <div className="options1Set">
+                        <div className="optionBlock blockC">
+                            <span id="addedOptionB1Text" className="blockText">Added</span>
                             <img src={blockAdded} />
                         </div>
                     </div>
@@ -73,7 +104,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         )
     }
 
-    addOption() {
+    addOption(newValue: string) {
         
         const addedATime = 0.5
         const addedADelay = 0.2
@@ -85,7 +116,26 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         const resetDelay = addedBTime + addedBDelay
         const resetTime = 1.0
 
-        const addedA = document.getElementById("addedOptionA")
+        var aID = "addedOptionA1"
+        var bID = "addedOptionB1"
+
+        var a1Text = "addedOptionA1Text"
+        var b1Text = "addedOptionB1Text"
+
+        const aText = document.getElementById(a1Text)
+        aText.innerText = newValue
+
+        const bText = document.getElementById(b1Text)
+        bText.innerText = newValue
+        // if(count === 1) {
+        //     aID = "addedOptionA2"
+        //     bID = "addedOptionB2"
+        // }
+        // else if(count === 2) {
+        //     aID = "addedOptionA3"
+        //     bID = "addedOptionB3"
+        // }
+        const addedA = document.getElementById(aID)
         GSAP.TweenMax.to(addedA, addedATime, {opacity: 1, delay: addedADelay})
 
         const swingyPart = document.getElementById("seesawSwingyPart")
@@ -105,7 +155,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         const optionsB = document.getElementById("seesawOptionsB")
         GSAP.TweenMax.to(optionsB, offsetTime, {bottom: 82+offset, delay: offsetDelay})
 
-        const addedB = document.getElementById("addedOptionB") 
+        const addedB = document.getElementById(bID) 
          GSAP.TweenMax.to(addedB, addedBTime, {opacity: 1, delay:addedBDelay})
 
 
@@ -116,7 +166,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         GSAP.TweenMax.to(addedA, resetTime, {bottom: 403, delay: resetDelay})
         GSAP.TweenMax.to(optionsB, resetTime, {bottom: 82, delay: resetDelay})
         GSAP.TweenMax.to(addedB, resetTime, {bottom: 403, delay:resetDelay})
-
+        // this.addOption()
     }
 }
 
