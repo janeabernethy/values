@@ -66,9 +66,8 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
     }
 
     addOption() {
-        const addedA = document.getElementById("addedOptionA");
-        console.log(addedA)
-        //  GSAP.TweenMax.to(addedA, 1.0, {delay: 0.1, visible: true})
+        const addedA = document.getElementById("addedOptionA") as HTMLDivElement | null;
+         GSAP.TweenMax.to(addedA, 0.2, {opacity: 1, delay:0.5})
     }
 }
 
