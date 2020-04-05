@@ -6,18 +6,24 @@ import './Additional.css'
 import {
     withRouter
   } from 'react-router-dom'
+  import { Seesaw, SeesawProps } from './Seesaw'
 
 type AdditionalValueProps = { key: string } ;
 
 interface AdditionalValueState {
     items: string[]; 
     stepNumber: number;
+    seesaw: Seesaw
   }
 
 class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValueProps>, AdditionalValueState> {
     constructor(props: RouteComponentProps<AdditionalValueProps>) {
-        super(props);       
-        this.state = {items: [], stepNumber:0}
+        super(props); 
+        const key = this.props.match.params.key
+        const currentOption = getValues().filter(value => value.key === key)[0];
+        const items = currentOption.options
+
+        this.state = {items: [], stepNumber:0, seesaw: new Seesaw({items: items}, {items: items})}
         this.handleItemAdded = this.handleItemAdded.bind(this);
         this.input1Disabled = this.input1Disabled.bind(this);
         this.input2Disabled = this.input2Disabled.bind(this);
@@ -64,8 +70,14 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
     }
 
     onSubmit(event: FormEvent<HTMLFormElement>) {
+        console.log("A")
+       
         this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1})
+    
+        this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber)
+        console.log(this.state.stepNumber)
         if(this.state.stepNumber === 2) {
+            console.log("b")
             const key = this.props.match.params.key
             const currentOption = getValues().filter(value => value.key === key)[0];
             const updatedOptions = currentOption.options.concat(this.state.items)
@@ -74,8 +86,10 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
             this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
         }
         else {
+            console.log("c")
             event.preventDefault();
         }
+        event.preventDefault();
 
     }
 
@@ -97,8 +111,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
 
     render() {
         const key = this.props.match.params.key
-        //const currentOption = getValues().filter(value => value.key === key)[0];
-        const values = ["cheap", "fun environment", "team enviornment", "eating helathy", "realistic", "feeling good", "convenient", "looking good", "strength", "good sleep"]
+        const currentOption = getValues().filter(value => value.key === key)[0];
+        const items = currentOption.options
         return(
             <div className="additionalContent">
                 <div className="additionalLeft">
@@ -143,7 +157,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                 </div>
                 </div>
                 <div className="additionalRight">
-
+                    {this.state.seesaw.render()}
                 </div>
             </div>
         )

@@ -21,10 +21,15 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         super(props);
     }
 
+  
     componentDidMount() {
-        this.addOption("loyalty")
+        const addedOptionA1 = document.getElementById("addedOptionA1")
+        const addedOptionA2 = document.getElementById("addedOptionA2")
+        const addedOptionA3 = document.getElementById("addedOptionA3")
+        const addedOptionB1 = document.getElementById("addedOptionB1")
+        const addedOptionB2 = document.getElementById("addedOptionB2")
+        const addedOptionB3 = document.getElementById("addedOptionB3")
     }
-
     render() {
         return (
         <div className="seesawContent">
@@ -33,7 +38,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="addedOptionA3" className="addedOptionA3">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
-                            <span className="blockText">Added</span>
+                            <span id="addedOptionA3Text"  className="blockTextAdded">Added</span>
                             <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
@@ -41,7 +46,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="addedOptionA2" className="addedOptionA2">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
-                            <span className="blockText">Added</span>
+                            <span id="addedOptionA2Text" className="blockTextAdded">Added</span>
                             <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
@@ -49,7 +54,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="addedOptionA1" className="addedOptionA1">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
-                            <span id="addedOptionA1Text" className="blockText">Added</span>
+                            <span id="addedOptionA1Text" className="blockTextAdded">Added</span>
                             <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
@@ -65,7 +70,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="addedOptionB3" className="addedOptionB3">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
-                            <span className="blockText">Added</span>
+                            <span id="addedOptionB3Text" className="blockTextAdded">Added</span>
                             <img src={blockAdded} />
                         </div>
                     </div>
@@ -73,7 +78,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="addedOptionB2" className="addedOptionB2">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
-                            <span className="blockText">Added</span>
+                            <span id="addedOptionB2Text" className="blockTextAdded">Added</span>
                             <img src={blockAdded} />
                         </div>
                     </div>
@@ -81,7 +86,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="addedOptionB1" className="addedOptionB1">
                     <div className="options1Set">
                         <div className="optionBlock blockC">
-                            <span id="addedOptionB1Text" className="blockText">Added</span>
+                            <span id="addedOptionB1Text" className="blockTextAdded">Added</span>
                             <img src={blockAdded} />
                         </div>
                     </div>
@@ -104,7 +109,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         )
     }
 
-    addOption(newValue: string) {
+     addOption(newValue: string, count: number) {
         
         const addedATime = 0.5
         const addedADelay = 0.2
@@ -116,27 +121,38 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         const resetDelay = addedBTime + addedBDelay
         const resetTime = 1.0
 
-        var aID = "addedOptionA1"
-        var bID = "addedOptionB1"
+ 
 
-        var a1Text = "addedOptionA1Text"
-        var b1Text = "addedOptionB1Text"
+        var aTextID = "addedOptionA1Text"
+        var bTextID = "addedOptionB1Text"
 
-        const aText = document.getElementById(a1Text)
+        const firstValueA = document.getElementById("addedOptionA1")
+        const secondValueA = document.getElementById("addedOptionA2") 
+        const thirdValueA = document.getElementById("addedOptionA3") 
+
+        const firstValueB = document.getElementById("addedOptionB1")
+        const secondValueB = document.getElementById("addedOptionB2") 
+        const thirdValueB = document.getElementById("addedOptionB3") 
+
+        if(count === 1) {
+  
+            aTextID = "addedOptionA2Text"
+            bTextID = "addedOptionB2Text"
+        }
+        else if(count === 2) {
+            aTextID = "addedOptionA3Text"
+            bTextID = "addedOptionB3Text"
+        }
+
+        var aText = document.getElementById(aTextID)
+        var bText = document.getElementById(bTextID)
+
         aText.innerText = newValue
-
-        const bText = document.getElementById(b1Text)
         bText.innerText = newValue
-        // if(count === 1) {
-        //     aID = "addedOptionA2"
-        //     bID = "addedOptionB2"
-        // }
-        // else if(count === 2) {
-        //     aID = "addedOptionA3"
-        //     bID = "addedOptionB3"
-        // }
-        const addedA = document.getElementById(aID)
-        GSAP.TweenMax.to(addedA, addedATime, {opacity: 1, delay: addedADelay})
+
+        const fadeInA = count === 0 ? firstValueA : secondValueA
+        const fadeInB = count === 0 ? firstValueB : secondValueB
+        GSAP.TweenMax.to(fadeInA, addedATime, {opacity: 1, delay: addedADelay})
 
         const swingyPart = document.getElementById("seesawSwingyPart")
         GSAP.TweenMax.to(swingyPart, offsetTime, {rotation: -15, delay: offsetDelay})
@@ -148,25 +164,28 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
         GSAP.TweenMax.to(sideB, offsetTime, {bottom: offset, delay: offsetDelay})
 
         const optionsA = document.getElementById("seesawOptionsA")
-        GSAP.TweenMax.to(optionsA, offsetTime, {bottom: 82-offset, delay: offsetDelay})
+        GSAP.TweenMax.to(optionsA, offsetTime, {bottom: 83-offset, delay: offsetDelay})
 
-        GSAP.TweenMax.to(addedA, offsetTime, {bottom: 403-offset, delay: offsetDelay})
+        GSAP.TweenMax.to(firstValueA, offsetTime, {bottom: 403-offset, delay: offsetDelay})
+        GSAP.TweenMax.to(secondValueA, offsetTime, {bottom: 449-offset, delay: offsetDelay})
+
+        GSAP.TweenMax.to(firstValueB, offsetTime, {bottom: 403+offset, delay: offsetDelay})
+        GSAP.TweenMax.to(secondValueB, offsetTime, {bottom: 449+offset, delay: offsetDelay})
 
         const optionsB = document.getElementById("seesawOptionsB")
-        GSAP.TweenMax.to(optionsB, offsetTime, {bottom: 82+offset, delay: offsetDelay})
+        GSAP.TweenMax.to(optionsB, offsetTime, {bottom: 83+offset, delay: offsetDelay})
 
-        const addedB = document.getElementById(bID) 
-         GSAP.TweenMax.to(addedB, addedBTime, {opacity: 1, delay:addedBDelay})
-
+        GSAP.TweenMax.to(fadeInB, addedBTime, {opacity: 1, delay:addedBDelay})
 
         GSAP.TweenMax.to(swingyPart, resetTime, {rotation: 0, delay: resetDelay})
         GSAP.TweenMax.to(sideA, resetTime, {bottom: 0, delay: resetDelay})
         GSAP.TweenMax.to(sideB, resetTime, {bottom: 0, delay: resetDelay})
-        GSAP.TweenMax.to(optionsA, resetTime, {bottom: 82, delay: resetDelay})
-        GSAP.TweenMax.to(addedA, resetTime, {bottom: 403, delay: resetDelay})
-        GSAP.TweenMax.to(optionsB, resetTime, {bottom: 82, delay: resetDelay})
-        GSAP.TweenMax.to(addedB, resetTime, {bottom: 403, delay:resetDelay})
-        // this.addOption()
+        GSAP.TweenMax.to(optionsA, resetTime, {bottom: 83, delay: resetDelay})
+        GSAP.TweenMax.to(firstValueA, resetTime, {bottom: 403, delay: resetDelay})
+        GSAP.TweenMax.to(secondValueA, resetTime, {bottom: 449, delay: resetDelay})
+        GSAP.TweenMax.to(optionsB, resetTime, {bottom: 83, delay: resetDelay})
+        GSAP.TweenMax.to(firstValueB, resetTime, {bottom: 403, delay:resetDelay})
+        GSAP.TweenMax.to(secondValueB, resetTime, {bottom: 449, delay:resetDelay})
     }
 }
 

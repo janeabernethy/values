@@ -5,7 +5,7 @@ import  {HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { Comparison } from './Comparison'
 import { Options } from './Options'
 import AdditonalValues  from './Additional'
-import { Seesaw, SeesawProps } from './Seesaw'
+
 import  Results  from './Results'
 
 var classNames = require('classnames');
@@ -29,18 +29,15 @@ export class App extends React.Component {
 }
 
 const Home = () => (
-    
     <div className="content">
-     
-      <Seesaw items={["having a really good gym and dog and stuff", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]}/>
-    {/* <div className="header">Select an area of values you work on</div>
-    <div className="description">Our values are our principles, ethics, priorities in a given context. They determine what is important to us and what we care about. Our motivation levels are linked to our values. We can feel our energy increase when our values are being met and conversely we can struggle with motivation when our values are not present.</div>
-    <div className="options">
-    {
-    getValues().map(aValue =>
-      <ValueOption value = { aValue } />
-    )}
-    </div> */}
+      <div className="header">Select an area of values you work on</div>
+      <div className="description">Our values are our principles, ethics, priorities in a given context. They determine what is important to us and what we care about. Our motivation levels are linked to our values. We can feel our energy increase when our values are being met and conversely we can struggle with motivation when our values are not present.</div>
+      <div className="options">
+      {
+      getValues().map(aValue =>
+        <ValueOption value = { aValue } />
+      )}
+    </div>
   </div>
 );
 
