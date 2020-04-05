@@ -39,7 +39,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                         </div>
                     </div>
                 </div>
-                <div className="seesawOptionsA">
+                <div className="seesawOptionsA" id="seesawOptionsA">
                     {
                         this.props.items.map((object, i) => 
                           i %3 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option items={this.props.items} index={i} />            
@@ -47,7 +47,15 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                     }
                 </div>
                 </div>
-                <div className="seesawOptionsB">
+                <div id="addedOptionB" className="addedOptionB">
+                    <div className="options1Set">
+                        <div className="optionBlock blockC">
+                            <span className="blockText">Added</span>
+                            <img src={blockAdded} />
+                        </div>
+                    </div>
+                </div>
+                <div id="seesawOptionsB" className="seesawOptionsB">
                     {
                         this.props.items.map((object, i) => 
                           i %3 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option items={this.props.items} index={i} />            
@@ -55,9 +63,9 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                     }
                 </div>
                 <div className="seesawBottomSection">
-                    <div className="seesawSideA"><img className="seesawSideAImg" src={sideA} /></div>
-                    <div className="seesawSideB"><img className="seesawSideBImg" src={sideB} /></div>
-                    <div className="seesawSwingyPart"><img className="seesawSwingyImg" src={swingyPart} /></div>
+                    <div id="seesawSideA" className="seesawSideA"><img className="seesawSideAImg" src={sideA} /></div>
+                    <div id="seesawSideB" className="seesawSideB"><img className="seesawSideBImg" src={sideB} /></div>
+                    <div id="seesawSwingyPart" className="seesawSwingyPart"><img className="seesawSwingyImg" src={swingyPart} /></div>
                     <div className="seesawBase"><img className="seesawBaseImg" src={seesawBase} /></div>
                 </div>
             </div>
@@ -66,8 +74,49 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
     }
 
     addOption() {
-        const addedA = document.getElementById("addedOptionA") as HTMLDivElement | null;
-         GSAP.TweenMax.to(addedA, 0.2, {opacity: 1, delay:0.5})
+        
+        const addedATime = 0.5
+        const addedADelay = 0.2
+        const offset = 22
+        const offsetTime = 0.6
+        const offsetDelay = addedATime + addedADelay
+        const addedBTime = 0.5
+        const addedBDelay = offsetDelay + offsetTime + 1.0
+        const resetDelay = addedBTime + addedBDelay
+        const resetTime = 1.0
+
+        const addedA = document.getElementById("addedOptionA")
+        GSAP.TweenMax.to(addedA, addedATime, {opacity: 1, delay: addedADelay})
+
+        const swingyPart = document.getElementById("seesawSwingyPart")
+        GSAP.TweenMax.to(swingyPart, offsetTime, {rotation: -15, delay: offsetDelay})
+
+        const sideA = document.getElementById("seesawSideA")
+        GSAP.TweenMax.to(sideA, offsetTime, {bottom: -offset, delay: offsetDelay})
+
+        const sideB = document.getElementById("seesawSideB")
+        GSAP.TweenMax.to(sideB, offsetTime, {bottom: offset, delay: offsetDelay})
+
+        const optionsA = document.getElementById("seesawOptionsA")
+        GSAP.TweenMax.to(optionsA, offsetTime, {bottom: 82-offset, delay: offsetDelay})
+
+        GSAP.TweenMax.to(addedA, offsetTime, {bottom: 403-offset, delay: offsetDelay})
+
+        const optionsB = document.getElementById("seesawOptionsB")
+        GSAP.TweenMax.to(optionsB, offsetTime, {bottom: 82+offset, delay: offsetDelay})
+
+        const addedB = document.getElementById("addedOptionB") 
+         GSAP.TweenMax.to(addedB, addedBTime, {opacity: 1, delay:addedBDelay})
+
+
+        GSAP.TweenMax.to(swingyPart, resetTime, {rotation: 0, delay: resetDelay})
+        GSAP.TweenMax.to(sideA, resetTime, {bottom: 0, delay: resetDelay})
+        GSAP.TweenMax.to(sideB, resetTime, {bottom: 0, delay: resetDelay})
+        GSAP.TweenMax.to(optionsA, resetTime, {bottom: 82, delay: resetDelay})
+        GSAP.TweenMax.to(addedA, resetTime, {bottom: 403, delay: resetDelay})
+        GSAP.TweenMax.to(optionsB, resetTime, {bottom: 82, delay: resetDelay})
+        GSAP.TweenMax.to(addedB, resetTime, {bottom: 403, delay:resetDelay})
+
     }
 }
 

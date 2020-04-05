@@ -138,3 +138,11 @@
     bottom: 403px;
     opacity: 0;
 }
+
+.addedOptionB {
+    width: 180px;
+    left: 155px;
+    position: absolute;
+    bottom: 424px;
+    opacity: 0;
+}
