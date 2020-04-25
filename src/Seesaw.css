@@ -6,8 +6,10 @@
 .seesawWrapper {
     position: relative;
     width: 300px;
-    height: 600px;
+    height: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
+    width: 334px;
 }
 
 .seesawBottomSection {
@@ -69,11 +71,10 @@
 }
 
 .optionBlock {
-    width: 90px;
+    width: 123px;
     height: 46px;
     text-align: center;
     display: flex;
-    align-items: center;
 }
 
 .optionBlock img {
@@ -82,25 +83,30 @@
 
 .seesawOptionsA {
     width: 180px;
-    left: -40px;
+    left: -55px;
     position: absolute;
-    bottom: 82px;
+    bottom: 167px;
 }
 
 .seesawOptionsB {
     width: 180px;
-    left: 155px;
+    left: 270px;
     position: absolute;
-    bottom: 82px;
+    bottom: 167px;
 }
 
 .options1Set {
-    width:180px;
+    width: 123px;
     height: 46px;
+    border-radius: 3.6px;
+    background-color: #e3785e;
 }
+
 .options2Set {
-    width:180px;
+    width: 123px;
     height: 46px;
+    border-radius: 3.6px;
+    background-color: white;
 }
 
 .blockA {
@@ -115,22 +121,27 @@
 
 .blockC {
     position: absolute;
-    left: 46px;
 }
 
 .blockText {
     position: absolute;
-    max-width: 100%;
-    min-width: 100%;
+    width: 100%;
     text-align: center;
-    font-size: 10px;
-    color: white;
-    font-weight: bolder;
+    font-size: 12px;
     padding-left: 5px;
     padding-right: 5px;
-    box-sizing: border-box;;
+    line-height: 46px;
+    box-sizing: border-box;
+    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+.blockText1 {
+    color: white;
+}
+
+.blockText2 {
+    color:  #e3785e;
+}
 .blockTextAdded {
     position: absolute;
     max-width: 100%;

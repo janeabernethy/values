@@ -170,7 +170,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                 </div>
                 </div>
                 <div className="additionalRight">
-                    {/* {this.state.seesaw.render()} */}
+                    {this.state.seesaw.render()}
                 </div>
             </div>
         )

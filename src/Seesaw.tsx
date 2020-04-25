@@ -2,10 +2,6 @@ import React  from 'react';
 import './Seesaw.css';
 import seesawBase from './Images/Seesaw/SeesawBase.png'; 
 import swingyPart from './Images/Seesaw/SwingyPart.png'; 
-import sideA from './Images/Seesaw/SideA.png'; 
-import sideB from './Images/Seesaw/SideB.png'; 
-import blockFull from './Images/Seesaw/BlockFull.png'; 
-import blockShaded from './Images/Seesaw/BlockShaded.png'; 
 import blockAdded from './Images/Seesaw/BlockAdded.png'; 
 import * as GSAP from 'gsap';
 
@@ -62,7 +58,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div className="seesawOptionsA" id="seesawOptionsA">
                     {
                         this.props.items.map((object, i) => 
-                          i %3 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option items={this.props.items} index={i} />            
+                          i %2 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option value={object}/>           
                         )
                     }
                 </div>
@@ -94,13 +90,11 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="seesawOptionsB" className="seesawOptionsB">
                     {
                         this.props.items.map((object, i) => 
-                          i %3 == 0 ? <Seesaw1Option value={object}/> : <Seesaw2Option items={this.props.items} index={i} />            
+                          i %2 == 0 ? <Seesaw1Option value={object}/> :<Seesaw2Option value={object}/>            
                         )
                     }
                 </div>
                 <div className="seesawBottomSection">
-                    <div id="seesawSideA" className="seesawSideA"><img className="seesawSideAImg" src={sideA} /></div>
-                    <div id="seesawSideB" className="seesawSideB"><img className="seesawSideBImg" src={sideB} /></div>
                     <div id="seesawSwingyPart" className="seesawSwingyPart"><img className="seesawSwingyImg" src={swingyPart} /></div>
                     <div className="seesawBase"><img className="seesawBaseImg" src={seesawBase} /></div>
                 </div>
@@ -205,50 +199,26 @@ interface Seesaw1OptionProps {
       return (
         <div className="options1Set">
             <div className="optionBlock blockC">
-                <span className="blockText">{this.props.value}</span>
-                <img src={blockShaded} />
+                <span className="blockText block1Text">{this.props.value}</span>
             </div>
         </div>
       )
     }
   }
 
+
   interface Seesaw2OptionProps {
-    items: Array<string>
-    index: number
+    value: string;
   }
   
-  class Seesaw2Option extends React.Component<Seesaw2OptionProps>  {
+  class Seesaw2Option extends React.Component<Seesaw1OptionProps>  {
     render () {
-        var shouldRender = this.props.index % 3 < 2
-        var hasNext = (this.props.index + 1) < this.props.items.length
-        if (shouldRender == true && hasNext) {
-            return (
-                <div className="options2Set">
-                    <div className="optionBlock blockA">
-                        <span className="blockText">{this.props.items[this.props.index]}</span>
-                        <img src={blockFull} />
-                    </div>
-                    <div className="optionBlock blockB">
-                        <span className="blockText">{this.props.items[this.props.index+1]}</span>
-                        <img src={blockShaded} />
-                    </div>
-                </div>
-            )
-        }
-        else if(shouldRender == true) {
-            return (
-            <div className="options1Set">
-                <div className="optionBlock blockC">
-                    <span className="blockText">{this.props.items[this.props.index]}</span>
-                    <img src={blockShaded} />
-                </div>
+      return (
+        <div className="options2Set">
+            <div className="optionBlock blockC">
+                <span className="blockText block2Text">{this.props.value}</span>
             </div>
-            )
-        }
-        else {
-            return <div></div>
-        }
-        
-        }
+        </div>
+      )
+    }
   }
