@@ -2,8 +2,8 @@ import React  from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { getValues } from './values';
 import './Comparison.css';
-import divide from './Images/Line.png'; 
-import restart from './Images/Restart.png'
+import divide from './Images/Compare/Line.png'; 
+
 
 type ComparisonProps = { key: string } ;
 type ComparisonState = { 
@@ -55,19 +55,13 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
 
     render() {
         return(
-            <div>
-                <div className="comparisonTitle">Choose which value is more important for you</div>
+            <div className="comparisonContent">
+                <div className="comparisonTitle">Select the value that is more important</div>
                 <div className="comparisonGrid">
                     <button className="inputOptionButton" onClick={this.selectOption1}>{this.state.optionA}</button>
                     <img className="divide" src={divide} alt=""/>
                     <button className="inputOptionButton" onClick={this.selectOption2}>{this.state.optionB}</button>
                 </div>
-                <button className="restartButton" onClick={this.reset}>
-                    <div className="restartButtonDiv">
-                    <img className="restartImg" src={restart} alt=""/>
-                    <div className="restartText">Start again</div>
-                    </div>
-                </button>
             </div>
         )
     }

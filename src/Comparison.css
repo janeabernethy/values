@@ -3,18 +3,38 @@
     border: transparent;
     font-size: 48px;
     cursor: pointer;
+    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #d4d5d4;
 }
 
 .inputOptionButton:focus {
     outline:0;
+    color: black;
+    opacity: 60%;
+}
+
+
+.inputOptionButton:active {
+    outline:0;
+    color: black;
+    opacity: 60%;
+}
+
+.inputOptionButton:hover {
+    outline:0;
+    color: black;
 }
 
 .comparisonTitle {
-    color: #545454;
     font-size: 20px;
-    font-weight: bold;
-    padding-top: 88px;
+    width: 100%;
+    bottom: 9px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     text-align: center;
+    padding-bottom: 45px;
+    position: relative;
+    margin: 0 auto;
+
 }
 
 .divide {
@@ -22,48 +42,46 @@
     height: 225px;
 }
 
+.comparisonContent {
+    max-width: 1024px;
+}
+
+@media screen and (max-width: 600px) {
+    .comparisonContent {
+        padding: 18px;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+
+
 .comparisonGrid {
     display: grid;
     grid-template-columns: 3fr 1fr 3fr;
     grid-column-gap: 24px;
-    padding-top: 96px;
     padding-left: 104px;
     padding-right: 104px;
-
+    min-width: 300px;
 }
 
-.restartButton {
-    background: transparent;
-    border: transparent;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    padding-top: 80px;
 
-}
+@media screen and (max-width: 600px) {
+    .divide {
+        width: 100%;
+        height: auto;
+    }
 
-.restartButton:focus {
-    outline:0;
-}
+    .comparisonGrid {
+        padding: 18px;
+        box-sizing: border-box;
+        grid-column-gap: 4.5px;
+    }
 
-.restartImg {
-    float: left;
-    width: 18px;
-    height: 21px;
-}
+    .comparisonTitle {
+        font-size: 14px;
+    }
 
-.restartText {
-    float: right;
-    padding-left: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #545454;
-    padding-top: 2px;
-}
-
-.restartButtonDiv {
-display: inline-block;
-
+    .inputOptionButton {
+        font-size: 20px;
+    }
 }
