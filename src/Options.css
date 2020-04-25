@@ -29,18 +29,17 @@
     }
 }
 
-
 .vaseImg {
     max-width: 100%;
     bottom: 0;
 }
+
 .optionsDescription {
     font-size: 14px;
     font-weight: normal;
     text-align: left;
     padding-top: 13.5px;
     font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-
 }
 
 .optionsRules {
@@ -74,6 +73,7 @@
         padding: 18px;
     }
 }
+
 .valueInput {
     border-radius: 5px;
     padding-left: 8px;
@@ -128,6 +128,14 @@
   }
   
   .valueSubmit:hover {
+    background: #678380;
+  }
+
+  .valueSubmit:focus {
+    background: #678380;
+  }
+
+  .valueSubmit:active {
     background: #678380;
   }
   .valueSubmit:disabled {

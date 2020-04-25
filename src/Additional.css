@@ -1,55 +1,72 @@
 .additionalContent {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 .additionalLeft {
-    padding: 40px 0px 40px 40px;
-    min-width: 240px;
+    padding: 36px;
+    width: 452px;
 }
 
 .additionalRight {
     width: 100%;
+    background-color: rgba(212, 213, 212, 0.31);
+}
+
+
+@media screen and (max-width: 600px) {
+    .additionalRight {
+        display: none !important;
+    }
+
+    .additionalLeft {
+        padding: 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 .additionalHeader {
     font-size: 20px;
-    font-weight: bold;
-    color: #545454;
+    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .additionalInstruction {
+    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 14px;
     font-weight: normal;
     text-align: left;
     color: #545454;
+    padding-top: 18px;
+    margin: 0;
 }
 
 .additionalValueInput {
     color: #545454;
     border: transparent;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 16px;
     border-bottom: 1px solid #D8D8D8;
     margin: 0;
     height: 26px;
     margin-top: auto;
     width: 100%;
+    padding-top: 36px;
+    border-radius: 0;
+    -webkit-appearance: textfield;
+    margin-right: 18px;
 }
+
+.additionalValueInput:focus {
+    border-bottom: 1px solid #678380;
+}
+
 .additionalSubmitDiv {
     padding-top: 20px;
     position: relative;
     float: right;
 }
-.additionalValueSubmit {
-    background: #395BDC;
-    color: white;
-    border: transparent;
-    height: 40px;
-    width: 100px;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 4px;
-  }
+
 
   .additionalValueInput:disabled {
       border: none;

@@ -6,7 +6,7 @@ import './Additional.css'
 import {
     withRouter
   } from 'react-router-dom'
-  import { Seesaw, SeesawProps } from './Seesaw'
+import { Seesaw, SeesawProps } from './Seesaw'
 import { throws } from 'assert';
 
 type AdditionalValueProps = { key: string } ;
@@ -73,27 +73,38 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
     }
 
     onSubmit(event: FormEvent<HTMLFormElement>) {
-       
-        this.setState({items:this.state.items, stepNumber: this.state.stepNumber + 1, step2Hidden: this.state.step2Hidden, step3Hidden: this.state.step3Hidden})
+        this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: this.state.step2Hidden, step3Hidden: this.state.step3Hidden})
+        console.log(this.state.stepNumber)
+        if(window.innerWidth <= 600) {
     
-        this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber, () => {
-            if(this.state.stepNumber === 1) {
-                this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: false, step3Hidden: this.state.step3Hidden})
-            }
-            if(this.state.stepNumber === 2) {
-                this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: false, step3Hidden: false})
-            }
-
-            if(this.state.stepNumber === 3) {
-                const key = this.props.match.params.key
-                const currentOption = getValues().filter(value => value.key === key)[0];
-                const updatedOptions = currentOption.options.concat(this.state.items)
-                currentOption.options = updatedOptions
-                event.preventDefault();
-                this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
-            }
-        })
+            this.showNext()
+        }
+        else {
+            // this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber, () => {
+                this.showNext()
+               
+            //  })
+        }
         event.preventDefault();
+   
+    }
+
+    showNext() {
+        if(this.state.stepNumber === 0) {
+            this.setState({items:this.state.items, stepNumber: this.state.stepNumber+1, step2Hidden: false, step3Hidden: this.state.step3Hidden})
+        }
+        if(this.state.stepNumber === 1) {
+            this.setState({items:this.state.items, stepNumber: this.state.stepNumber+1, step2Hidden: false, step3Hidden: false})
+        }
+
+        if(this.state.stepNumber === 2) {
+            const key = this.props.match.params.key
+            const currentOption = getValues().filter(value => value.key === key)[0];
+            const updatedOptions = currentOption.options.concat(this.state.items)
+            currentOption.options = updatedOptions
+            this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
+        }
+
     }
 
     isStep2Hidden() {
@@ -128,7 +139,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="one"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input1Disabled()}/>
                         <div className="additionalSubmitDiv">
-                            <input type="submit" className="additionalValueSubmit" value="Next" hidden={this.submit1Hidden()}/>
+                            <input type="submit" className="valueSubmit" value="Next" hidden={this.submit1Hidden()}/>
                         </div>
                     </form>
                     </div>
@@ -140,7 +151,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="two"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
                         <div className="additionalSubmitDiv">
-                            <input type="submit" className="additionalValueSubmit" value="Next" hidden={this.submit2Hidden()}/>
+                            <input type="submit" className="valueSubmit" value="Next" hidden={this.submit2Hidden()}/>
                         </div>
                     </form>
                     </div>
@@ -152,14 +163,14 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="three"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
                         <div className="additionalSubmitDiv">
-                            <input type="submit" className="additionalValueSubmit" value="Next" hidden={this.submit3Hidden()}/>
+                            <input type="submit" className="valueSubmit" value="Next" hidden={this.submit3Hidden()}/>
                         </div>
                     </form>
                     </div>
                 </div>
                 </div>
                 <div className="additionalRight">
-                    {this.state.seesaw.render()}
+                    {/* {this.state.seesaw.render()} */}
                 </div>
             </div>
         )
