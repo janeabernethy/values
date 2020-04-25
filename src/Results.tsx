@@ -24,6 +24,12 @@ class Results extends React.Component<RouteComponentProps<ResultProps>> {
         this.props.history.push('/')
     }
 
+    copyToClipboard() {
+        const key = this.props.match.params.key
+        const list = getValues().filter(value => value.key === key)[0].options
+        const copyList = list.toString();
+    }
+
     render() {
         const key = this.props.match.params.key
         const currentOption = getValues().filter(value => value.key === key)[0];
@@ -43,14 +49,14 @@ class Results extends React.Component<RouteComponentProps<ResultProps>> {
                 )}
                 </div>
                 <div className="resultButtons">
-                    <button className="resultButton" onClick={this.home}>
+                    {/* <button className="resultButton" onClick={this.copyToClipboard}>
                         <div><img className="resultButtonImage" src={copy}/></div>
                         <div className="resultButtonText">Copy</div>  
                     </button>
                     <button className="resultButton" onClick={this.home}>
                         <div><img className="resultButtonImage" src={download}/></div>
                         <div className="resultButtonText">Download</div>  
-                    </button>
+                    </button> */}
                     <button className="resultButton" onClick={this.home}>
                         <div><img className="resultButtonImage" src={restart}/></div>
                         <div className="resultButtonText">Start over</div>  
