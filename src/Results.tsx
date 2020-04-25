@@ -6,6 +6,9 @@ import {
     withRouter
   } from 'react-router-dom'
 
+import copy from './Images/Results/CopyIcon.png'; 
+import download from './Images/Results/DownloadIcon.png'; 
+import restart from './Images/Results/RestartIcon.png'; 
 type ResultProps = { key: string } ;
 
 
@@ -25,16 +28,34 @@ class Results extends React.Component<RouteComponentProps<ResultProps>> {
         const key = this.props.match.params.key
         const currentOption = getValues().filter(value => value.key === key)[0];
         return(
-            <div className="content">
-                <div className="header">Your values in order</div>
-                <div className="descriptionCentered">These are your values in order. The first 5 are you non negotiables</div>
-                <ol className="resultsList">
+            <div className="resultsContent">
+                <div className="resultsHeader">Your values in order</div>
+                <div className="resultsDescription">These are your values in order. The first 5 are you non negotiables</div>
+                <div className="resultsList">
                 {
-                currentOption.options.map(aValue =>
-                <li>{aValue}</li>
+                currentOption.options.map((aValue, index) =>
+                <div className="resultItem">
+                    
+                    <div className={index < 5 ? "resultNumberBoxImportant" : "resultNumberBox"}>
+                        <div className="resultNumber">{index + 1}</div></div>
+                        <div className="resultValue">{aValue}</div>
+                    </div>
                 )}
-                </ol>
-                <button className="restartButton" onClick={this.home}> Start again</button>
+                </div>
+                <div className="resultButtons">
+                    <button className="resultButton" onClick={this.home}>
+                        <div><img className="resultButtonImage" src={copy}/></div>
+                        <div className="resultButtonText">Copy</div>  
+                    </button>
+                    <button className="resultButton" onClick={this.home}>
+                        <div><img className="resultButtonImage" src={download}/></div>
+                        <div className="resultButtonText">Download</div>  
+                    </button>
+                    <button className="resultButton" onClick={this.home}>
+                        <div><img className="resultButtonImage" src={restart}/></div>
+                        <div className="resultButtonText">Start over</div>  
+                    </button>
+                </div>
             </div>
         )
     }
