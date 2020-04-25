@@ -5,6 +5,7 @@ import  {HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { Comparison } from './Comparison'
 import { Options } from './Options'
 import AdditonalValues  from './Additional'
+import MotivationalValues  from './Motivational'
 import  Results  from './Results'
 import MetaTags from 'react-meta-tags';
 
@@ -21,6 +22,7 @@ export class App extends React.Component {
           <Route path="/comparison:key" component={Comparison}/>
           <Route path="/results:key" component={Results} />
           <Route path="/additional:key" component={AdditonalValues} />
+          <Route path="/motivational:key" component={MotivationalValues} />
           </Switch>
       </HashRouter>
     

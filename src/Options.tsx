@@ -34,7 +34,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
     const currentOption = getValues().filter(value => value.key === key)[0];
     currentOption.options = inputArray
     event.preventDefault();
-    this.props.history.push({pathname: `/additional${this.props.match.params.key}`})
+    this.props.history.push({pathname: `/motivational${this.props.match.params.key}`})
   }
 
   render() {
