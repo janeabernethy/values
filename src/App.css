@@ -76,6 +76,7 @@ a {
   box-shadow: 0 0 3px 0 #f5e2e2;
   border: solid 2px #f5e2e2;
 }
+
 .optionButton:active {
   box-shadow: 0 0 3px 0 #f5e2e2;
   border: solid 2px #f5e2e2;
@@ -115,8 +116,6 @@ a {
 .optionTitle {
   font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-
-
 }
 
 .optionDescription {

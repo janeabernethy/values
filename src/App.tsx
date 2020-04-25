@@ -5,8 +5,8 @@ import  {HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { Comparison } from './Comparison'
 import { Options } from './Options'
 import AdditonalValues  from './Additional'
-
 import  Results  from './Results'
+import MetaTags from 'react-meta-tags';
 
 var classNames = require('classnames');
 
@@ -14,7 +14,7 @@ export class App extends React.Component {
   render() {
     return (
       <HashRouter>
-        {/* <div className="content"> */}
+        <meta property="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
           <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/option:key" component={Options}/>
@@ -22,8 +22,8 @@ export class App extends React.Component {
           <Route path="/results:key" component={Results} />
           <Route path="/additional:key" component={AdditonalValues} />
           </Switch>
-        {/* </div> */}
-      </HashRouter  >
+      </HashRouter>
+    
     );
   }
 }

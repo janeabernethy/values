@@ -4,6 +4,7 @@ import { InputtedValues, updateInputValue, valuesCount, valuesToArray } from './
 import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router-dom';
 import './Options.css';
+import vase from './Images/OptionInput/Vase.png'; 
 
 
 type OptionsProps = { key: string };
@@ -42,11 +43,12 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
     return (
       <div className="optionsInputContainer">
         <div className="optionsPanel">
-          <div className="optionsHeader">{currentOption.name}</div>
-          <div className="optionsDescription">{currentOption.description}</div>
-          <div className="optionsRules">Add at least 5 values</div>
+            <img className="vaseImg" src={vase} />
         </div>
         <div className="optionsInput">
+        <div className="optionsHeader">{currentOption.name}</div>
+          <div className="optionsDescription">{currentOption.description}</div>
+          <div className="optionsRules">Add at least 5 values</div>
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <input name="one"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="two"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
