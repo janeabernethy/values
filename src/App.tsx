@@ -14,7 +14,7 @@ export class App extends React.Component {
   render() {
     return (
       <HashRouter>
-        <div className="content">
+        {/* <div className="content"> */}
           <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/option:key" component={Options}/>
@@ -22,7 +22,7 @@ export class App extends React.Component {
           <Route path="/results:key" component={Results} />
           <Route path="/additional:key" component={AdditonalValues} />
           </Switch>
-        </div>
+        {/* </div> */}
       </HashRouter  >
     );
   }
@@ -30,8 +30,7 @@ export class App extends React.Component {
 
 const Home = () => (
     <div className="content">
-      <div className="header">Select an area of values you work on</div>
-      <div className="description">Our values are our principles, ethics, priorities in a given context. They determine what is important to us and what we care about. Our motivation levels are linked to our values. We can feel our energy increase when our values are being met and conversely we can struggle with motivation when our values are not present.</div>
+      <div className="header">Select an area of values to work on</div>
       <div className="options">
       {
       getValues().map(aValue =>
@@ -51,9 +50,13 @@ class ValueOption extends React.Component<ValueOptionProps>  {
       <Link to={`/option${this.props.value.key}`}>
       <button className="optionButton">
         <div className={classNames(`option ${this.props.value.class}`)}>
-          <img className="optionImage" src={this.props.value.image}/>
-          <div className="optionTitle">{this.props.value.name}</div>
-          <div className="optionDescription">{this.props.value.description}</div>
+          <div className="optionImageDiv">
+            <img className="optionImage" src={this.props.value.image}/>
+          </div>
+          <div className="optionText">
+            <div className="optionTitle">{this.props.value.name}</div>
+            <div className="optionDescription">{this.props.value.description}</div>
+          </div>
         </div>
       </button>
       </Link>

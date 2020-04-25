@@ -1,120 +1,125 @@
-html { 
-  background: url(Images/BackgroundImage.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  background: white;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 896px;
-  height: 635px;
-  transform: translate(-50%, -50%);
-  border-radius: 24px;
-  box-shadow: 0 0 53px 8px rgba(0, 0, 0, 0.33);
+  max-width: 736px;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  
+  position: relative;
 }
 
 .header {
-  padding: 56px 80px 0 80px;
-  font-size: 36px;
+  padding-left: 9px;
+  padding-right: 9px;
   font-weight: bold;
   text-align: center;
-  color: #545454;
+  color: black;
+  line-height: 1.2;
+  font-size: calc(18px + (36 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
 
-.description {
-  padding: 24px 80px 0 80px;
-  color: #545454;
-  text-align: left;
-  font-size: 12px;
-}
 
 .options {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 24px;
-  padding: 24px 80px 0 80px;
-  max-width: 968px;
-  gap: 32px;
+  grid-template-columns: 1fr;
+  padding-top: 24px;
+  max-width: 736;
+  gap: 18px;
+  max-width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.optionButton {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 3px;
+  border: solid 2px rgba(18, 38, 63, 0.06);
+  display: flex;
+}
+
+.optionButton:hover {
+  box-shadow: 0 0 3px 0 #f5e2e2;
+  border: solid 2px #f5e2e2;
+}
+.optionButton:active {
+  box-shadow: 0 0 3px 0 #f5e2e2;
+  border: solid 2px #f5e2e2;
 }
 
 .option {
   width: 100%;
   height: 100%;
-  background: #EBF5FC;
   display: flex;
-  flex-direction: column;
-  border-radius: 8px;
 }
 
-
+.optionImageDiv {
+  width: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 .optionImage {
-  padding-left: 24px;
+  padding-left: 12px;
   display: block;
-  width: 29px;
-  height: 33px;
-  padding-top: 44px;
+  width: 56px;
+  height: 56px;
+  padding-right: 12px;
+  margin: 0;
 }
 
-.optionTitle {
-  font-size: 18px;
-  font-weight: bolder;
+.optionText {
+  padding-left: 0;
   text-align: left;
-  padding-top: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  color: #3C3B46;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.optionTitle {
+  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+
+
 }
 
 .optionDescription {
-  font-size: 12px;
-  padding-top: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
-  text-align: left;
-  color: #3C3B46;
-}
-
-.optionButton {
-  background: transparent;
-  border: transparent;
-  border-radius: 10px;
-  padding: 0;
-  margin: 0;
-  width: 218px;
-  height: 175px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.optionButton:focus {
-  outline:0;
-}
-
-.welnessOption {
-  background: #FFF2F2;
-}
-
-.relationshipOption {
-  background: #FFFBE4;
-}
-
-.leadershipOption {
-  background: #F5ECFF;
-}
-
-.coreOption {
-  background: #E4F9F9;
-}
-
-.workOption {
-  background: #EBF5FC;
+  font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
+  font-family:-apple-system, BlinkMacSystemFont, sans-serif;
 }

@@ -1,8 +1,8 @@
-import workPuzzle from './Images/WorkPuzzle.png';
-import corePuzzle from './Images/CorePuzzle.png'; 
-import leadershipPuzzle from './Images/LeadershipPuzzle.png'; 
-import relationshipPuzzle from './Images/RelationshipPuzzle.png'; 
-import healthPuzzle from './Images/HealthPuzzle.png'; 
+import workIcon from './Images/Home/CareerIcon.jpg';
+import coreIcon from './Images/Home/CoreIcon.jpg'; 
+import leadershipIcon from './Images/Home/LeadershipIcon.jpg'; 
+import relationshipIcon from './Images/Home/RelationshipIcon.jpg'; 
+import healthIcon from './Images/Home/HealthIcon.jpg'; 
 
 
 export interface Value {
@@ -20,7 +20,7 @@ export var workValues = {
     description: "What is important to me in my career?",
     options: [],
     class: "workOption",
-    image: workPuzzle
+    image: workIcon
 } as Value
 
 export var coreLifeValues = {
@@ -29,7 +29,7 @@ export var coreLifeValues = {
     description: "What is important to me in my life?",
     options: [],
     class: "coreOption",
-    image: corePuzzle,
+    image: coreIcon,
 } as Value
 
 export var leadershipValues = {
@@ -38,7 +38,7 @@ export var leadershipValues = {
     description: "What is important to me in leadership style?",
     options: [],
     class: "leadershipOption",
-    image: leadershipPuzzle
+    image: leadershipIcon
 } as Value
 
 export var relationshipValues = {
@@ -47,7 +47,7 @@ export var relationshipValues = {
     description: "What is important to me in my relationship?",
     options: [],
     class: "relationshipOption",
-    image: relationshipPuzzle
+    image: relationshipIcon
 } as Value
 
 
@@ -57,7 +57,7 @@ export var wellnessValues = {
     description: "What is important to me in health & fitness?",
     options: [],
     class: "welnessOption",
-    image: healthPuzzle } as Value
+    image: healthIcon } as Value
 
 export function getValues(): Array<Value> {
     return [
