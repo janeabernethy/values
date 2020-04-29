@@ -75,6 +75,7 @@
     height: 46px;
     text-align: center;
     display: flex;
+    position: absolute;
 }
 
 .optionBlock img {
@@ -109,19 +110,6 @@
     background-color: white;
 }
 
-.blockA {
-    position: absolute;
-    left: 0;
-}
-
-.blockB {
-    position: absolute;
-    left: 86px;
-}
-
-.blockC {
-    position: absolute;
-}
 
 .blockText {
     position: absolute;
@@ -135,12 +123,12 @@
     font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.blockText1 {
+.block1Text {
     color: white;
 }
 
-.blockText2 {
-    color:  #e3785e;
+.block2Text {
+    color: black;
 }
 .blockTextAdded {
     position: absolute;
@@ -156,49 +144,66 @@
 }
 
 .addedOptionA1 {
-    width: 180px;
-    left: -40px;
+    width: 123px;
+    height: 46px;
+    left: -55px;
     position: absolute;
     bottom: 403px;
     opacity: 0;
+    background: #678380;
 }
 
 .addedOptionA2 {
+    width: 123px;
+    height: 46px;
     width: 180px;
-    left: -40px;
+    left: -55px;
     position: absolute;
     bottom: 449px;
     opacity: 0;
+    background: #D4D5D4;
 }
 
 .addedOptionA3 {
+    width: 123px;
+    height: 46px;
     width: 180px;
-    left: -40px;
+    left: -55px;
     position: absolute;
     bottom: 495px;
     opacity: 0;
+    background: #678380;
 }
 
 .addedOptionB1 {
-    width: 180px;
+    width: 123px;
+    height: 46px;
     left: 155px;
     position: absolute;
     bottom: 424px;
     opacity: 0;
+    left: 270px;
+    background: #678380;
 }
 
 .addedOptionB2 {
-    width: 180px;
+    width: 123px;
+    height: 46px;
     left: 155px;
     position: absolute;
     bottom: 470px;
     opacity: 0;
+    left: 270px;
+    background: #D4D5D4;
 }
 
 .addedOptionB3 {
-    width: 180px;
+    width: 123px;
+    height: 46px;
     left: 155px;
     position: absolute;
     bottom: 495px;
     opacity: 0;
+    left: 270px;
+    background: #678380;
 }

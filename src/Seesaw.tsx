@@ -2,7 +2,6 @@ import React  from 'react';
 import './Seesaw.css';
 import seesawBase from './Images/Seesaw/SeesawBase.png'; 
 import swingyPart from './Images/Seesaw/SwingyPart.png'; 
-import blockAdded from './Images/Seesaw/BlockAdded.png'; 
 import * as GSAP from 'gsap';
 
 export type SeesawProps = { 
@@ -35,7 +34,6 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                     <div className="options1Set">
                         <div className="optionBlock blockC">
                             <span id="addedOptionA3Text"  className="blockTextAdded">Added</span>
-                            <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
                 </div>
@@ -43,15 +41,13 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                     <div className="options1Set">
                         <div className="optionBlock blockC">
                             <span id="addedOptionA2Text" className="blockTextAdded">Added</span>
-                            <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
                 </div>
                 <div id="addedOptionA1" className="addedOptionA1">
                     <div className="options1Set">
-                        <div className="optionBlock blockC">
+                        <div className="optionBlock">
                             <span id="addedOptionA1Text" className="blockTextAdded">Added</span>
-                            <img id="addedImage1" src={blockAdded} />
                         </div>
                     </div>
                 </div>
@@ -65,25 +61,22 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 </div>
                 <div id="addedOptionB3" className="addedOptionB3">
                     <div className="options1Set">
-                        <div className="optionBlock blockC">
+                        <div className="optionBlock">
                             <span id="addedOptionB3Text" className="blockTextAdded">Added</span>
-                            <img src={blockAdded} />
                         </div>
                     </div>
                 </div>
                 <div id="addedOptionB2" className="addedOptionB2">
                     <div className="options1Set">
-                        <div className="optionBlock blockC">
+                        <div className="optionBlock">
                             <span id="addedOptionB2Text" className="blockTextAdded">Added</span>
-                            <img src={blockAdded} />
                         </div>
                     </div>
                 </div>
                 <div id="addedOptionB1" className="addedOptionB1">
                     <div className="options1Set">
-                        <div className="optionBlock blockC">
+                        <div className="optionBlock">
                             <span id="addedOptionB1Text" className="blockTextAdded">Added</span>
-                            <img src={blockAdded} />
                         </div>
                     </div>
                 </div>
@@ -198,7 +191,7 @@ interface Seesaw1OptionProps {
     render () {
       return (
         <div className="options1Set">
-            <div className="optionBlock blockC">
+            <div className="optionBlock">
                 <span className="blockText block1Text">{this.props.value}</span>
             </div>
         </div>
@@ -215,7 +208,7 @@ interface Seesaw1OptionProps {
     render () {
       return (
         <div className="options2Set">
-            <div className="optionBlock blockC">
+            <div className="optionBlock">
                 <span className="blockText block2Text">{this.props.value}</span>
             </div>
         </div>

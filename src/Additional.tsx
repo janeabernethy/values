@@ -80,10 +80,9 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
             this.showNext()
         }
         else {
-            // this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber, () => {
+             this.state.seesaw.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber, () => {
                 this.showNext()
-               
-            //  })
+              })
         }
         event.preventDefault();
    
@@ -102,7 +101,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
             const currentOption = getValues().filter(value => value.key === key)[0];
             const updatedOptions = currentOption.options.concat(this.state.items)
             currentOption.options = updatedOptions
-            this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
+            // this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
         }
 
     }

@@ -30,9 +30,83 @@
 }
 
 .vaseImg {
-    max-width: 100%;
+    position: relative;
+    max-width: 320px;
     bottom: 0;
 }
+
+#branch1 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 200px) rotate(10deg);
+    opacity: 0;
+}
+
+#branch2 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 200px) rotate(-12deg); 
+    opacity: 0;
+}
+
+#branch3 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 250px) rotate(-6deg); 
+    opacity: 0;
+}
+
+#branch4 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 135px) rotate(12deg); 
+    opacity: 0;
+}
+
+#branch5 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 100px) rotate(-18deg); 
+    opacity: 0;
+}
+
+#branch6 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(70px, 100px) rotate(12deg);
+    opacity: 0;
+}
+
+#branch7 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(-70px, 100px) rotate(-12deg);
+    opacity: 0;
+}
+
+#branch8 {
+    position: absolute;
+    width: 320px;
+    bottom: 0;
+    left: 0;
+    transform: translate(0px, 250px);
+    opacity: 0;
+}
+
 
 .optionsDescription {
     font-size: 14px;
