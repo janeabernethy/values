@@ -6,7 +6,7 @@ import './Motivational.css'
 import {
     withRouter
   } from 'react-router-dom'
-import { Seesaw, SeesawProps } from './Seesaw'
+import { Frame } from './Frames'
 import { throws } from 'assert';
 
 type MotivationalValueProps = { key: string } ;
@@ -14,7 +14,7 @@ type MotivationalValueProps = { key: string } ;
 interface MotivationalValueState {
     items: string[]; 
     stepNumber: number;
-    seesaw: Seesaw
+    frame: Frame
     step2Hidden: boolean
     step3Hidden: boolean
   }
@@ -26,7 +26,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
         const currentOption = getValues().filter(value => value.key === key)[0];
         const items = currentOption.options
 
-        this.state = {items: [], stepNumber:0, seesaw: new Seesaw({items: items}, {items: items}), step2Hidden: true, step3Hidden: true}
+        this.state = {items: [], stepNumber:0, frame: new Frame({items: items}, {items: items}), step2Hidden: true, step3Hidden: true}
         this.handleItemAdded = this.handleItemAdded.bind(this);
         this.input1Disabled = this.input1Disabled.bind(this);
         this.input2Disabled = this.input2Disabled.bind(this);
@@ -158,7 +158,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                 </div>
                 </div>
                 <div className="additionalRight">
-                
+                {this.state.frame.render()}
                 </div>
             </div>
         )

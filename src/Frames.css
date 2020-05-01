@@ -1,0 +1,26 @@
+.frameContent {
+    width: 482px;
+    height: 661px;
+    position: relative;
+}
+
+.frameImage {
+    position: absolute;
+    width: 223px;
+    height: 197px;
+}
+
+#frame1 {
+    left: 46px;
+    top: 0px;
+}
+
+#frame2 {
+    right: 46px;
+    top: 233px;
+}
+
+#frame3 {
+    left: 46px;
+    bottom: 0px;
+}
