@@ -17,6 +17,7 @@ class Results extends React.Component<RouteComponentProps<ResultProps>> {
         super(props);
     
         this.home = this.home.bind(this);
+        this.download = this.download.bind(this);
 
     }
 
@@ -48,7 +49,7 @@ class Results extends React.Component<RouteComponentProps<ResultProps>> {
     render() {
         const key = this.props.match.params.key
         const currentOption = getValues().filter(value => value.key === key)[0];
-        const orderedValues = ["one", "two", "three"]//currentOption.options
+        const orderedValues = currentOption.options
         return(
             <div className="resultsContent">
                 <div className="resultsHeader">Your values in order</div>

@@ -7,7 +7,7 @@
     color: #d4d5d4;
 }
 
-.inputOptionButton:focus {
+/* .inputOptionButton:focus {
     outline:0;
     color: black;
     opacity: 60%;
@@ -18,12 +18,12 @@
     outline:0;
     color: black;
     opacity: 60%;
-}
+}*/
 
 .inputOptionButton:hover {
     outline:0;
     color: black;
-}
+} 
 
 .comparisonTitle {
     font-size: 20px;

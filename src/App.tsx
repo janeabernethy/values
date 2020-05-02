@@ -1,9 +1,10 @@
-import React,  { MouseEvent } from 'react';
+import React from 'react';
 import './App.css';
 import { Value, getValues } from './values';
 import  {HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { Comparison } from './Comparison'
 import { Options } from './Options'
+import { CoverPage } from './CoverPage'
 import AdditonalValues  from './Additional'
 import MotivationalValues  from './Motivational'
 import  Results  from './Results'
@@ -16,7 +17,8 @@ export class App extends React.Component {
       <HashRouter>
         <meta property="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
           <Switch>
-          <Route path="/" exact component={Home}/>
+          <Route path="/" exact component={CoverPage}/>
+          <Route path="/start" exact component={Home}/>
           <Route path="/option:key" component={Options}/>
           <Route path="/comparison:key" component={Comparison}/>
           <Route path="/results:key" component={Results} />
@@ -29,7 +31,7 @@ export class App extends React.Component {
   }
 }
 
-const Home = () => (
+export const Home = () => (
     <div className="content">
       <div className="header">Select an area you want to identify your values</div>
 

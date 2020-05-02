@@ -1,0 +1,76 @@
+.coverContent {
+    display: flex;
+
+}
+
+.coverTitle {
+    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 36px;
+    color: #678380;
+
+}
+
+.coverText {
+    font-family:  -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 0px;
+}
+
+.coverImageContainer {
+    min-width: 306px;
+    min-height: 387px;
+    max-width: 306px;
+    max-height: 387px;
+}
+
+.coverInfoContainer {
+    padding-left: 45px;
+    padding-right: 45px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+#coverVase {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#coverBlob {
+    left: 0;
+    position: absolute;
+    width: 306px;
+    height: 387px;
+}
+
+.getStarted { 
+    float: none;
+}
+#coverLeaves {
+    left: 0;
+    position: absolute;
+    width: 306px;
+    height: 387px;
+}
+
+@media screen and (max-width: 600px) {
+    .coverText {
+        font-size: 12px;
+    }
+  
+    .coverTitle {
+        font-size: 16px;
+    }
+
+    .coverImageContainer {
+        display: none !important
+    }
+
+    .getStarted {
+        width: 100%;
+        font-size: 12px;
+    }
+  }

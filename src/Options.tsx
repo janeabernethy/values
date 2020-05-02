@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent } from 'react';
 import { getValues } from './values';
 import { InputtedValues, updateInputValue, valuesCount, valuesToArray } from './inputtedValues'
-import  {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router-dom';
 import * as GSAP from 'gsap';
 import './Options.css';
@@ -32,7 +31,6 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
   }
 
  updateLeavesShown(count: number) {
-console.log("hi")
   const branch1 = document.getElementById("branch1")
   const branch2 = document.getElementById("branch2")
   const branch3 = document.getElementById("branch3")
