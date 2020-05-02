@@ -28,6 +28,20 @@
     box-sizing: border-box;
 }
 
+#seesawSectionA {
+    width: 180px;
+    left: -55px;
+    position: absolute;
+    bottom: 167px;
+}
+
+#seesawSectionB {
+    width: 180px;
+    left: 270px;
+    position: absolute;
+    bottom: 167px;
+}
+
 .seesawSwingyPart {
     max-width: 100%;
     height: auto;
@@ -70,140 +84,61 @@
     box-sizing: border-box;
 }
 
-.optionBlock {
-    width: 123px;
-    height: 46px;
-    text-align: center;
-    display: flex;
-    position: absolute;
-}
-
-.optionBlock img {
-    max-width: 100%;
-}
-
-.seesawOptionsA {
-    width: 180px;
-    left: -55px;
-    position: absolute;
-    bottom: 167px;
-}
-
-.seesawOptionsB {
-    width: 180px;
-    left: 270px;
-    position: absolute;
-    bottom: 167px;
-}
-
-.options1Set {
-    width: 123px;
-    height: 46px;
-    border-radius: 3.6px;
-    background-color: #e3785e;
-}
-
-.options2Set {
-    width: 123px;
-    height: 46px;
-    border-radius: 3.6px;
-    background-color: white;
-}
-
-
 .blockText {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
-    padding-left: 5px;
-    padding-right: 5px;
-    line-height: 46px;
-    box-sizing: border-box;
     font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.block1Text {
-    color: white;
-}
-
-.block2Text {
-    color: black;
-}
-.blockTextAdded {
-    position: absolute;
-    max-width: 100%;
-    min-width: 100%;
-    text-align: center;
-    font-size: 10px;
-    color: #545454;
-    font-weight: bolder;
+    font-size: 14px;
     padding-left: 5px;
     padding-right: 5px;
-    box-sizing: border-box;;
+    text-align: center;
 }
 
-.addedOptionA1 {
+.optionBlockTextContainer {
+    opacity: 0.4;
+    border-radius: 6px;
+    background-color: white;
     width: 123px;
     height: 46px;
-    left: -55px;
-    position: absolute;
-    bottom: 403px;
-    opacity: 0;
-    background: #678380;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.addedOptionA2 {
-    width: 123px;
-    height: 46px;
-    width: 180px;
-    left: -55px;
-    position: absolute;
-    bottom: 449px;
-    opacity: 0;
-    background: #D4D5D4;
+#seesawOptionsA {
+
 }
 
-.addedOptionA3 {
-    width: 123px;
-    height: 46px;
-    width: 180px;
-    left: -55px;
-    position: absolute;
-    bottom: 495px;
-    opacity: 0;
-    background: #678380;
+#seesawOptionsB {
+
 }
 
-.addedOptionB1 {
-    width: 123px;
-    height: 46px;
-    left: 155px;
-    position: absolute;
-    bottom: 424px;
-    opacity: 0;
-    left: 270px;
-    background: #678380;
+.blockTextAdded {
+    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
 }
 
-.addedOptionB2 {
-    width: 123px;
-    height: 46px;
-    left: 155px;
-    position: absolute;
-    bottom: 470px;
+#addedOptionA1 {
     opacity: 0;
-    left: 270px;
-    background: #D4D5D4;
 }
 
-.addedOptionB3 {
-    width: 123px;
-    height: 46px;
-    left: 155px;
-    position: absolute;
-    bottom: 495px;
+#addedOptionA2 {
     opacity: 0;
-    left: 270px;
-    background: #678380;
+}
+
+#addedOptionA3 {
+    opacity: 0;
+}
+
+#addedOptionB1 {
+    opacity: 0;
+}
+
+#addedOptionB2 {
+    opacity: 0;
+}
+
+#addedOptionB3 {
+    opacity: 0;
 }

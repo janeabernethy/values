@@ -91,11 +91,10 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
         if(this.state.stepNumber === 0) {
             this.setState({items:this.state.items, stepNumber: this.state.stepNumber+1, step2Hidden: false, step3Hidden: this.state.step3Hidden})
         }
-        if(this.state.stepNumber === 1) {
+        else if(this.state.stepNumber === 1) {
             this.setState({items:this.state.items, stepNumber: this.state.stepNumber+1, step2Hidden: false, step3Hidden: false})
         }
-
-        if(this.state.stepNumber === 2) {
+        else if(this.state.stepNumber === 2) {
             const key = this.props.match.params.key
             const currentOption = getValues().filter(value => value.key === key)[0];
             const updatedOptions = currentOption.options.concat(this.state.items)

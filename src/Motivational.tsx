@@ -162,8 +162,8 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     </div>
                 </div>
                 </div>
-                <div className="additionalRight">
-                {this.state.frame.render()}
+                <div className="additionalRight">         
+                    {this.state.frame.render()}
                 </div>
             </div>
         )

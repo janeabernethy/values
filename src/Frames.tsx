@@ -16,6 +16,13 @@ export class Frame extends React.Component<FrameProps, FrameState> {
         super(props);
     }
 
+    componentWillMount() {
+        const motivation1 = document.getElementById("motivation1");
+        motivation1.addEventListener('mouseenter', e => {
+          console.log(e)
+          });
+    }
+  
     addOption(newValue: string, count: number, callback: () => void) {
        
         var motivation: HTMLElement
