@@ -33,6 +33,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+
+
     handleItemAdded(event: ChangeEvent<HTMLInputElement>) {
         const value = event.target.value;
         if (value.length === 0) {
