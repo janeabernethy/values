@@ -123,7 +123,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
     render() {
         const key = this.props.match.params.key
         const currentOption = getValues().filter(value => value.key === key)[0];
-        const items = currentOption.options
+        // const items = currentOption.options
         return(
             <div className="additionalContent">
                 <div className="additionalLeft">
