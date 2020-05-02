@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {MouseEvent}  from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { getValues } from './values';
 import './Comparison.css';
@@ -58,9 +58,9 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
             <div className="comparisonContent">
                 <div className="comparisonTitle">Select the value that is more important</div>
                 <div className="comparisonGrid">
-                    <button className="inputOptionButton" onClick={this.selectOption1}>{this.state.optionA}</button>
+                    <button id="comparisonButton1"  className="inputOptionButton" onClick={this.selectOption1}>{this.state.optionA}</button>
                     <img className="divide" src={divide} alt=""/>
-                    <button className="inputOptionButton" onClick={this.selectOption2}>{this.state.optionB}</button>
+                    <button id="comparisonButton1" className="inputOptionButton" onClick={this.selectOption2}>{this.state.optionB}</button>
                 </div>
             </div>
         )
@@ -106,7 +106,7 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
         }
     }
 
-    selectOption1() {
+    selectOption1(event: MouseEvent<HTMLButtonElement>) {
 
         var arr = this.state.innerStrings
         arr[this.state.innerPosition] = this.state.innerValue
@@ -115,7 +115,7 @@ export class Comparison extends React.Component<RouteComponentProps<ComparisonPr
         this.state.innerCompletion(arr)
     }
 
-    selectOption2() {
+    selectOption2(event: MouseEvent<HTMLButtonElement>) {
         let innerPos = this.state.innerPosition
         let leftInnerPos = innerPos - 1
         var arr = this.state.innerStrings
