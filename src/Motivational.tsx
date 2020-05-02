@@ -74,27 +74,32 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
 
     onSubmit(event: FormEvent<HTMLFormElement>) {
         this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: this.state.step2Hidden, step3Hidden: this.state.step3Hidden})
-        this.showNext()
+        if(window.innerWidth <= 600) {
+            this.showNext()
+        }
+        else {
+            console.log(this.state.items[this.state.stepNumber])
+             this.state.frame.addOption(this.state.items[this.state.stepNumber], this.state.stepNumber, () => {
+                this.showNext()
+              })
+        }
         event.preventDefault();
-
     }
 
     showNext() {
         if(this.state.stepNumber === 0) {
             this.setState({items:this.state.items, stepNumber: this.state.stepNumber+1, step2Hidden: false, step3Hidden: this.state.step3Hidden})
         }
-        if(this.state.stepNumber === 1) {
+        else if(this.state.stepNumber === 1) {
             this.setState({items:this.state.items, stepNumber: this.state.stepNumber+1, step2Hidden: false, step3Hidden: false})
         }
-
-        if(this.state.stepNumber === 2) {
+        else if(this.state.stepNumber === 2) {
             const key = this.props.match.params.key
             const currentOption = getValues().filter(value => value.key === key)[0];
             const updatedOptions = currentOption.options.concat(this.state.items)
             currentOption.options = updatedOptions
             this.props.history.push({pathname: `/additional${this.props.match.params.key}`})
         }
-
     }
 
     isStep2Hidden() {
@@ -120,7 +125,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
         return(
             <div className="additionalContent">
                 <div className="additionalLeft">
-                    <div className="additionalHeader">Your {currentOption.name} Motivational Values</div>
+                    <div className="additionalHeader">Your Motivational Values</div>
                     <div className="additionalInstructions">
                         <p className="additionalInstruction">Remember a time you were really motivated about {currentOption.name.toLowerCase()}. What is one word to describe why?</p>
                     </div>

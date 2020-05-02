@@ -74,7 +74,6 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
 
     onSubmit(event: FormEvent<HTMLFormElement>) {
         this.setState({items:this.state.items, stepNumber: this.state.stepNumber, step2Hidden: this.state.step2Hidden, step3Hidden: this.state.step3Hidden})
-        console.log(this.state.stepNumber)
         if(window.innerWidth <= 600) {
     
             this.showNext()
