@@ -44,13 +44,11 @@ console.log("hi")
 
 
   if (count === 1) {
-    GSAP.TweenMax.to(branch1, 0.2, {translateY: 105, rotate: 3, delay: 0.2})
-    GSAP.TweenMax.to(branch1, 0, {opacity: 1, delay: 0.3})
-
-    GSAP.TweenMax.to(branch2, 0, {opacity: 0, delay: 0})
+    GSAP.TweenMax.to(branch1, 0.3, {translateY: 105, rotate: 3, delay: 0.2})
+    GSAP.TweenMax.to(branch1, 0.2, {opacity: 1, delay: 0.3})
   }
   else if (count === 2) {
-    GSAP.TweenMax.to(branch2, 0.2, {translateY: 85, rotate: -6, delay: 0.3})
+    GSAP.TweenMax.to(branch2, 0.3, {translateY: 20, rotate: -6, delay: 0.3})
     GSAP.TweenMax.to(branch2, 0.2, {opacity: 1, delay: 0.4})
   }
   else if (count === 3) {
