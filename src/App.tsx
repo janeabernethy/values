@@ -7,7 +7,6 @@ import { Options } from './Options'
 import AdditonalValues  from './Additional'
 import MotivationalValues  from './Motivational'
 import  Results  from './Results'
-import MetaTags from 'react-meta-tags';
 
 var classNames = require('classnames');
 
@@ -32,7 +31,8 @@ export class App extends React.Component {
 
 const Home = () => (
     <div className="content">
-      <div className="header">Select an area of values to work on</div>
+      <div className="header">Select an area you want to identify your values</div>
+
       <div className="options">
       {
       getValues().map(aValue =>

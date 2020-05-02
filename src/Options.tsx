@@ -28,7 +28,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
   }
 
    submitDisabled() {
-     return valuesCount(this.state) < 5
+     return valuesCount(this.state) < 1
   }
 
  updateLeavesShown(count: number) {
@@ -174,9 +174,8 @@ console.log("hi")
           <img className="vaseImg" src={vase} />
         </div>
         <div className="optionsInput">
-        <div className="optionsHeader">{currentOption.name}</div>
-          <div className="optionsDescription">{currentOption.description}</div>
-          <div className="optionsRules">Add at least 5 values</div>
+        <div className="optionsHeader">Your {currentOption.name} Values</div>
+          <div className="optionsRules">Ask yourself ‘what is important to me in my {currentOption.name}?’ several times until you run out of answers. List each answer.</div>
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <input name="one"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />
             <input name="two"   className="valueInput" type="text" placeholder="Enter a value" onChange={this.handleChange} />

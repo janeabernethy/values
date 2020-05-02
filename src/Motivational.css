@@ -46,9 +46,11 @@
 }
 
 .additionalValueInput {
+    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
     color: #545454;
     border: transparent;
     font-size: 16px;
+    font-weight: bolder;
     border-bottom: 1px solid #D8D8D8;
     margin: 0;
     height: 26px;

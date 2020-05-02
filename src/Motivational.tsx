@@ -127,7 +127,8 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                 <div className="additionalLeft">
                     <div className="additionalHeader">Your Motivational Values</div>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Remember a time you were really motivated about {currentOption.name.toLowerCase()}. What is one word to describe why?</p>
+                        <p className="additionalInstruction">A motivational value is the key drivers that caused you to react or feel a certain way. Surfacing them from events from the past are a useful place to start. </p>
+                        <p className="additionalInstruction">Think of a time in the past, in this context, when you felt super motivated and happy. What caused you to feel this way? If there is a new value, add it to your list. If it’s a value that you have already written down, don’t add it.  </p>
                     </div>
                     <div className="additionalInput">
                     <div>
@@ -140,7 +141,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     </div>
                     <div hidden={this.isStep2Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Can you remember another time? What would be one word to descrive why?</p>
+                        <p className="additionalInstruction">Repeat again</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="two"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
@@ -151,7 +152,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     </div>
                     <div hidden={this.isStep3Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Can you remember another time? What would be one more word to descrive why?</p>
+                        <p className="additionalInstruction">Repeat again</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="three"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>

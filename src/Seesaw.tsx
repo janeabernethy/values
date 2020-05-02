@@ -17,7 +17,7 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
     }
 
     render() {
-        const items = ["Jane", "Can", "Do", "This"]
+        const items = this.props.items;
         return (
         <div className="seesawContent">
             <div className="seesawWrapper">
@@ -139,18 +139,18 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
             GSAP.TweenMax.to(swingyPart, offsetTime, {rotation: -15, delay: offsetDelay})
             
             const sideA = document.getElementById("seesawSectionA")
-            GSAP.TweenMax.to(sideA, offsetTime, {bottom: 120, delay: offsetDelay})
+            GSAP.TweenMax.to(sideA, offsetTime, {bottom: 53, delay: offsetDelay})
 
             const sideB = document.getElementById("seesawSectionB")
-            GSAP.TweenMax.to(sideB, offsetTime, {bottom: 214, delay: offsetDelay})
+            GSAP.TweenMax.to(sideB, offsetTime, {bottom: 147, delay: offsetDelay})
 
             const optionsA = document.getElementById("seesawOptionsA")
     
             GSAP.TweenMax.to(fadeInB, addedBTime, {opacity: 1, delay:addedBDelay})
 
             GSAP.TweenMax.to(swingyPart, resetTime, {rotation: 0, delay: resetDelay, onComplete: callback})
-            GSAP.TweenMax.to(sideA, resetTime, {bottom: 167, delay: resetDelay})
-            GSAP.TweenMax.to(sideB, resetTime, {bottom: 167, delay: resetDelay})
+            GSAP.TweenMax.to(sideA, resetTime, {bottom: 100, delay: resetDelay})
+            GSAP.TweenMax.to(sideB, resetTime, {bottom: 100, delay: resetDelay})
         }
         else {
             //just fade in last 2

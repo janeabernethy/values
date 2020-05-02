@@ -99,7 +99,7 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
             const currentOption = getValues().filter(value => value.key === key)[0];
             const updatedOptions = currentOption.options.concat(this.state.items)
             currentOption.options = updatedOptions
-            // this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
+            this.props.history.push({pathname: `/comparison${this.props.match.params.key}`})
         }
 
     }
@@ -127,9 +127,10 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
         return(
             <div className="additionalContent">
                 <div className="additionalLeft">
-                    <div className="additionalHeader">Your {currentOption.name} Values</div>
+                    <div className="additionalHeader">Threshold Values</div>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">If you had all these values in your {currentOption.name.toLowerCase()}, what else could I offer you on top of your existing values to cause you to jump over to something new?</p>
+                        <p className="additionalInstruction">Threshold values describe a point at which you are keen to want to make a change for something better. </p>
+                        <p className="additionalInstruction">Ask Yourself: <br />What else would I have to offer you (on top of the values you have listed under {currentOption.name}) that would cause you to</p>
                     </div>
                     <div className="additionalInput">
                     <div>
@@ -142,8 +143,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     </div>
                     <div hidden={this.isStep2Hidden()}>
                     <div className="additionalInstructions">
-                    <p className="additionalInstruction">Now both options include <b>{this.state.items[0]}</b>.</p>
-                        <p className="additionalInstruction">What else could I offer you on top of your existing values to cause you to jump over to something new?</p>
+                        <p className="additionalInstruction">{this.state.items[0]} has been added.</p>
+                        <p className="additionalInstruction">Repeat again</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="two"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
@@ -154,8 +155,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     </div>
                     <div hidden={this.isStep3Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Now both options include <b>{this.state.items[1]}</b>.</p>
-                        <p className="additionalInstruction">What else could I offer you on top of your existing values to cause you to jump over to something new?</p>
+                        <p className="additionalInstruction">{this.state.items[1]} has been added.</p>
+                        <p className="additionalInstruction">Repeat again</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
                         <input name="three"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>

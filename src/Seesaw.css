@@ -32,14 +32,14 @@
     width: 180px;
     left: -55px;
     position: absolute;
-    bottom: 167px;
+    bottom: 100px;
 }
 
 #seesawSectionB {
     width: 180px;
     left: 270px;
     position: absolute;
-    bottom: 167px;
+    bottom: 100px;
 }
 
 .seesawSwingyPart {
@@ -97,7 +97,7 @@
     border-radius: 6px;
     background-color: white;
     width: 123px;
-    height: 46px;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
