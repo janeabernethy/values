@@ -41,11 +41,12 @@
   }
 
   .resultNumberBox {
-    width: 45px;
-    height: 45px;
     border-radius: 5px;
     background-color: #2a514d;
     line-height: 45px;
+    min-width: 45px;
+    min-height: 45px;
+    max-height: 45px;
   }
 
   .resultNumber {
