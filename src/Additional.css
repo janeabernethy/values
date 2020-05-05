@@ -11,7 +11,7 @@
 
 .additionalRight {
     width: 100%;
-    background-color: rgba(212, 213, 212, 0.31);
+    background-color: #F6E9FF;
 }
 
 
@@ -28,12 +28,11 @@
 }
 
 .additionalHeader {
-    font-size: 20px;
-    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .additionalInstruction {
-    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 14px;
     font-weight: normal;
     text-align: left;
@@ -46,7 +45,7 @@
     color: #545454;
     border: transparent;
     font-size: 16px;
-    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
     border-bottom: 1px solid #D8D8D8;
     margin: 0;
     height: 26px;

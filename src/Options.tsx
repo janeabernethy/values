@@ -158,7 +158,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
     return (
       <div className="optionsInputContainer">
         <div className="optionsPanel">
-          <img id="branch8" src={branch8} />
+         
           <img id="branch1" src={branch1} />
           <img id="branch2" src={branch2} />
           <img id="branch3" src={branch3} />
@@ -166,7 +166,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
           <img id="branch5" src={branch5} />
           <img id="branch6" src={branch6} />
           <img id="branch7" src={branch7} />
-
+          <img id="branch8" src={branch8} />
           <img className="vaseImg" src={vase} />
         </div>
         <div className="optionsInput">
