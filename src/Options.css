@@ -188,7 +188,9 @@
   }
 
   .valueSubmit {
-    background: #2a514d;
+    font-family: "Open Sans", sans-serif;
+
+    background: #00C7CF;
     color: white;
     border: transparent;
     height: 44px;
@@ -202,15 +204,15 @@
   }
   
   .valueSubmit:hover {
-    background: #678380;
+    background: #00B2B7;
   }
 
   .valueSubmit:focus {
-    background: #678380;
+    background: #00B2B7;
   }
 
   .valueSubmit:active {
-    background: #678380;
+    background: #00B2B7;
   }
   .valueSubmit:disabled {
       background-color: #D9D9D9;

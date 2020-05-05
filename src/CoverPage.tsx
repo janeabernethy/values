@@ -2,34 +2,15 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import './CoverPage.css';
 import vase from './Images/Cover/CoverVase.png'; 
-import leaves from './Images/Cover/CoverLeaves.png'; 
-import blob from './Images/Cover/Blob.png'; 
 import * as GSAP from 'gsap';
 import  {HashRouter, Switch, Route, Link } from 'react-router-dom';
 
 export class CoverPage extends React.Component<RouteComponentProps> { 
 
-    componentDidMount() {
-        this.mouseEnter = this.mouseEnter.bind(this);
-        this.mouseLeave = this.mouseLeave.bind(this);
-    }
-
-    mouseEnter() {
-        const leaves = document.getElementById("coverLeaves")
-        GSAP.TweenMax.to(leaves, 0.4, {scale: 1.15, translateY: -6, transformOrigin:"50% 50%", delay: 0.3})
-    }
-
-    mouseLeave() {
-        const leaves = document.getElementById("coverLeaves")
-        GSAP.TweenMax.to(leaves, 0.1, {scale: 1, translateY: 0})
-    }
-
     render() {
         return(
         <div className="coverContent">
-            <div className="coverImageContainer" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-                <img src={blob} id="coverBlob" />
-                <img src={leaves} id="coverLeaves" />
+            <div className="coverImageContainer">
                 <img src={vase} id="coverVase" />
             </div>
             <div className="coverInfoContainer">
