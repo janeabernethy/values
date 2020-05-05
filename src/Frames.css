@@ -1,35 +1,30 @@
 .frameContent {
-    width: 482px;
+    width: 600px;
     height: 661px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
-.motivationFrame {
+.motivationPlant {
+    width: 138px;
+    height: 265px; 
+}
+
+.plant {
     position: absolute;
-    width: 223px;
-    height: 197px;
+    width: 138px;
+    height: 265px;
+    transform: scale(0);
+    opacity: 0;
 }
-
-#motivationFrame1 {
-    left: 46px;
-    top: 0px;
-}
-
-#motivationFrame2 {
-    right: 46px;
-    top: 233px;
-}
-
-#motivationFrame3 {
-    left: 46px;
-    bottom: 0px;
-}
-
-.frameImage {
+.pot {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: absolute;
+
 }
 
 .motivationText {
@@ -51,14 +46,3 @@
     padding-top: 12px;
 }
 
-#motivation1 {
-    opacity: 0;
-}
-
-#motivation2{
-    opacity: 0;
-}
-
-#motivation3 {
-    opacity: 0;
-}

@@ -3,22 +3,10 @@
     border: transparent;
     font-size: 48px;
     cursor: pointer;
-    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
     color: #d4d5d4;
 }
 
-/* .inputOptionButton:focus {
-    outline:0;
-    color: black;
-    opacity: 60%;
-}
-
-
-.inputOptionButton:active {
-    outline:0;
-    color: black;
-    opacity: 60%;
-}*/
 
 .inputOptionButton:hover {
     outline:0;
@@ -29,7 +17,6 @@
     font-size: 20px;
     width: 100%;
     bottom: 9px;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     text-align: center;
     padding-bottom: 45px;
     position: relative;

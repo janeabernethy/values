@@ -6,7 +6,6 @@
 
 .resultsDescription {
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     padding-top: 9px;
     font-size: 14px;
     padding-bottom: 18px;
@@ -14,7 +13,7 @@
 
   .resultsHeader {
     font-size: 36px;
-    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
   }
   .resultsList {
     display: grid;
@@ -36,13 +35,13 @@
     width: 45px;
     height: 45px;
     border-radius: 5px;
-    background-color: #2a514d;
+    background-color: #7300D7;
     line-height: 45px;
   }
 
   .resultNumberBox {
     border-radius: 5px;
-    background-color: #2a514d;
+    background-color: #9B18FF;
     line-height: 45px;
     min-width: 45px;
     min-height: 45px;
@@ -52,9 +51,9 @@
   .resultNumber {
     text-align: center;
     vertical-align: middle;
-    font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
     font-size: 20px;
-    color: #f5e2e2;
+    color: #ffffff;
   }
 
   .resultValue {
@@ -78,8 +77,8 @@
   padding-left: 18px;
   padding-right:18px;
   min-height: 44px;
-  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
+  font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
   row-gap: 9px;
     display: flex;
@@ -88,17 +87,17 @@
  }
 
  .resultButton:hover {
-  color: #2a514d;
+  color: black;
   outline: 0;
 }
 
 .resultButton:focus {
-  color: #2a514d;
+  color: black;
   outline: 0;
 }
 
 .resultButton:active {
-  color: #2a514d;
+  color: black;
   outline: 0;
 }
 
@@ -125,9 +124,8 @@
   }
 
   .resultButtons {
-flex-direction: column;
-align-items: flex-start;
-
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .resultsList {
