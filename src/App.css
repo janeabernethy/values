@@ -6,7 +6,7 @@ html {
 body {
   height: 100%;
   width: 100%;
-  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -37,6 +37,8 @@ button:focus {outline:0;}
 }
 
 .header {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   padding-left: 9px;
   padding-right: 9px;
   text-align: center;
@@ -75,18 +77,18 @@ button:focus {outline:0;}
   overflow: hidden;
   cursor: pointer;
   border-radius: 3px;
-  border: solid 2px rgba(18, 38, 63, 0.06);
+  border: solid 1px rgba(18, 38, 63, 0.06);
   display: flex;
 }
 
 .optionButton:hover {
-  box-shadow: 0 0 3px 0 #f5e2e2;
-  border: solid 2px #f5e2e2;
+  box-shadow: 0 0 3px 3px #CAEFFE;
+  border: solid 1px #0092DA;
 }
 
 .optionButton:active {
-  box-shadow: 0 0 3px 0 #f5e2e2;
-  border: solid 2px #f5e2e2;
+  box-shadow: 0 0 3px 3px #CAEFFE;
+  border: solid 1px #0092DA;
 }
 
 .option {
@@ -121,11 +123,12 @@ button:focus {outline:0;}
   margin-bottom: auto;
 }
 .optionTitle {
-  font-family: "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 600;
 }
 
 .optionDescription {
   font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1600 - 300)));
-  font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  color: #B6B8B9;
 }
