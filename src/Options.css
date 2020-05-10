@@ -29,7 +29,8 @@
 }
 
 .vaseImg {
-    position: relative;
+    /* position: relative; */
+    z-index: 100;
     max-width: 320px;
     bottom: 0;
 }
@@ -38,72 +39,72 @@
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(0, 200px) rotate(10deg);
     opacity: 0;
+    z-index: -1;
 }
 
 #branch2 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(0, 200px) rotate(-12deg); 
     opacity: 0;
+    z-index: -2;
 }
 
 #branch3 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(0, 250px) rotate(-6deg); 
     opacity: 0;
+    z-index: -3;
 }
 
 #branch4 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(0, 135px) rotate(12deg); 
     opacity: 0;
+    z-index: -4;
 }
 
 #branch5 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(0, 100px) rotate(-18deg); 
     opacity: 0;
+    z-index: -5;
 }
 
 #branch6 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(70px, 100px) rotate(12deg);
     opacity: 0;
+    z-index: -6;
 }
 
 #branch7 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(-70px, 100px) rotate(-12deg);
     opacity: 0;
+    z-index: -7;
 }
 
 #branch8 {
     position: absolute;
     width: 320px;
     bottom: 0;
-    left: 0;
     transform: translate(0px, 250px);
     opacity: 0;
+    z-index: -8;
 }
 
 
@@ -135,7 +136,6 @@
 .optionsInput {
     display: block;
     width: 100%;
-    padding-right: 72px;
     padding-left: 72px;
     margin-top: auto;
     margin-bottom: auto;

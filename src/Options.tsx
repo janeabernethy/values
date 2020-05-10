@@ -157,19 +157,7 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
     const currentOption = getValues().filter(value => value.key === key)[0];
     return (
       <div className="optionsInputContainer">
-        <div className="optionsPanel">
-          <div className="branches">
-          <img id="branch1" src={branch1} />
-          <img id="branch2" src={branch2} />
-          <img id="branch3" src={branch3} />
-          <img id="branch4" src={branch4} />
-          <img id="branch5" src={branch5} />
-          <img id="branch6" src={branch6} />
-          <img id="branch7" src={branch7} />
-          <img id="branch8" src={branch8} />
-          <img className="vaseImg" src={vase} />
-        </div>
-        </div>
+
         <div className="optionsInput">
         <div className="optionsHeader">Your {currentOption.name} Values</div>
           <div className="optionsRules">Ask yourself ‘what is important to me in my {currentOption.name}?’ several times until you run out of answers. List each answer.</div>
@@ -187,6 +175,19 @@ export class Options extends React.Component<RouteComponentProps<OptionsProps>> 
             <input type="submit" className="valueSubmit" value="Next" disabled={this.submitDisabled()}/>
         </form>
       </div>
+      <div className="optionsPanel">
+          <div className="branches">
+          <img id="branch1" src={branch1} />
+          <img id="branch2" src={branch2} />
+          <img id="branch3" src={branch3} />
+          <img id="branch4" src={branch4} />
+          <img id="branch5" src={branch5} />
+          <img id="branch6" src={branch6} />
+          <img id="branch7" src={branch7} />
+          <img id="branch8" src={branch8} />
+          <img className="vaseImg" src={vase} />
+        </div>
+        </div>
       </div>
     );
   }

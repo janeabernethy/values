@@ -10,9 +10,7 @@ export class CoverPage extends React.Component<RouteComponentProps> {
     render() {
         return(
         <div className="coverContent">
-            <div className="coverImageContainer">
-                <img src={vase} id="coverVase" />
-            </div>
+
             <div className="coverInfoContainer">
 
      
@@ -34,6 +32,9 @@ export class CoverPage extends React.Component<RouteComponentProps> {
                     <Link to="/start">
                         <button className="valueSubmit getStarted">Get started</button>
                     </Link>
+            </div>
+            <div className="coverImageContainer">
+                <img src={vase} id="coverVase" />
             </div>
         </div>
         )

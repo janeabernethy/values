@@ -20,15 +20,15 @@
 }
 
 .coverImageContainer {
-    min-width: 306px;
+    min-width: 272px;
     min-height: 387px;
-    max-width: 306px;
+    max-width: 272px;
     max-height: 387px;
 }
 
 .coverInfoContainer {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 90px;
+    padding-right: 90px;
     display: flex;
     justify-content: center;
     flex-direction: column;
