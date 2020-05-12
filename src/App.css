@@ -3,6 +3,13 @@ html {
   width: 100%;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/static/webfonts/OpenSans.woff) format('woff');
+}
+
 body {
   height: 100%;
   width: 100%;
