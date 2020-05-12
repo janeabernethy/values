@@ -132,7 +132,8 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     <div className="additionalHeader">Threshold Values</div>
                     <div className="additionalInstructions">
                         <p className="additionalInstruction">Threshold values describe a point at which you are keen to want to make a change for something better. </p>
-                        <p className="additionalInstruction">Ask Yourself: <br />What else would I have to offer you (on top of the values you have listed under {currentOption.name}) that would cause you to</p>
+                        <p className="additionaQuestionlInstruction">Ask Yourself </p>
+                        <p className="additionalInstruction">What else would I have to offer you (on top of the values you have listed under {currentOption.name}) that would cause you to</p>
                     </div>
                     <div className="additionalInput">
                     <div>
@@ -145,7 +146,6 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     </div>
                     <div hidden={this.isStep2Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">{this.state.items[0]} has been added.</p>
                         <p className="additionalInstruction">Repeat again</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
@@ -157,7 +157,6 @@ class AdditonalValues extends React.Component<RouteComponentProps<AdditionalValu
                     </div>
                     <div hidden={this.isStep3Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">{this.state.items[1]} has been added.</p>
                         <p className="additionalInstruction">Repeat again</p>
                     </div>
                     <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>

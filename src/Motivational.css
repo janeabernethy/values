@@ -1,66 +1,71 @@
-.additionalContent {
+.motivationalContent {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100%;
-}
-.additionalLeft {
-    padding: 36px;
-    width: 452px;
+    display: flex;
+    flex-direction: row;
 }
 
-.additionalRight {
+.motivationalLeft
+ {
+    display: block;
     width: 100%;
-    /* background-color: #F5E2E2; */
+    padding-left: 72px;
+    padding-top: 72px;
+}
+
+.motivationalRight {
+    min-width: 400px;
+    max-width: 400px;
+    height: 100%; 
+    align-items: flex-end;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
 @media screen and (max-width: 600px) {
-    .additionalRight {
+    .motivationalRight {
         display: none !important;
     }
 
-    .additionalLeft {
+    .motivationalLeft {
         padding: 18px;
         width: 100%;
         box-sizing: border-box;
     }
 }
 
-
-.additionalInstruction {
-    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+.motivationalInstruction {
     font-size: 14px;
     font-weight: normal;
     text-align: left;
     color: #545454;
+    margin: 0;
+}
+
+.motivationalForm {
+    padding-bottom: 18px;
     padding-top: 18px;
-    margin: 0;
+    margin-left: -4px;
 }
 
-.additionalValueInput {
-    font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-    color: #545454;
-    border: transparent;
-    font-size: 16px;
-    font-weight: bolder;
-    border-bottom: 1px solid #D8D8D8;
-    margin: 0;
-    height: 26px;
-    margin-top: auto;
+.motivationalInput {
+    border-radius: 5px;
+    padding-left: 8px;
+    display: block;
+    height: 45px;
+    background-color: rgba(212, 213, 212, 0.15); 
+    color: black;
+    font-weight: 600;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: 100%;
     width: 100%;
-    padding-top: 36px;
-    border-radius: 0;
-    -webkit-appearance: textfield;
-    margin-right: 18px;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border: solid 1px white;
 }
 
-.additionalValueInput:focus {
-    border-bottom: 1px solid #678380;
-}
 
 .additionalSubmitDiv {
     padding-top: 20px;

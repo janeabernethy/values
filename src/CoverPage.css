@@ -24,6 +24,7 @@
     min-height: 387px;
     max-width: 272px;
     max-height: 387px;
+    padding-right: 72px;
 }
 
 .coverInfoContainer {
@@ -57,7 +58,7 @@
     height: 387px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .coverText {
         font-size: 12px;
     }
@@ -73,5 +74,10 @@
     .getStarted {
         width: 100%;
         font-size: 12px;
+    }
+
+    .coverInfoContainer {
+        padding-right: 45px;
+        padding-left: 45px;
     }
   }

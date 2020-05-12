@@ -25,17 +25,17 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="seesawSectionA">
                 <div className="addedOptionsAContainer">
                     <div id="addedOptionA3">
-                        <div id="addedOptionBlockA3" className="optionBlockTextContainer whiteBlock">
+                        <div id="addedOptionBlockA3" className="optionBlockTextContainer block100">
                             <div id="addedOptionA3Text"  className="blockTextAdded optionBlock">Added</div>
                         </div>
                     </div>
                     <div id="addedOptionA2">
-                        <div id="addedOptionBlockA2" className="optionBlockTextContainer whiteBlock">
+                        <div id="addedOptionBlockA2" className="optionBlockTextContainer block100">
                             <div id="addedOptionA2Text" className="blockTextAdded optionBlock">Added</div>
                         </div>
                     </div>
                     <div id="addedOptionA1">
-                        <div id="addedOptionBlockA1" className="optionBlockTextContainer whiteBlock">
+                        <div id="addedOptionBlockA1" className="optionBlockTextContainer block100">
                             <div id="addedOptionA1Text" className="blockTextAdded optionBlock">Added</div>
                         </div>
                     </div>
@@ -51,17 +51,17 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
                 <div id="seesawSectionB">
                     <div className="addedOptionsBContainer">
                         <div id="addedOptionB3">           
-                            <div  id="addedOptionBlockB3" className="optionBlockTextContainer whiteBlock">
+                            <div  id="addedOptionBlockB3" className="optionBlockTextContainer block100">
                                 <div id="addedOptionB3Text" className="blockTextAdded optionBlock">Added</div>
                             </div>
                         </div>
                         <div id="addedOptionB2">    
-                            <div id="addedOptionBlockB2" className="optionBlockTextContainer whiteBlock">
+                            <div id="addedOptionBlockB2" className="optionBlockTextContainer block100">
                                 <div id="addedOptionB2Text" className="blockTextAdded optionBlock">Added</div>
                             </div>
                         </div>
                         <div id="addedOptionB1">
-                            <div  id="addedOptionBlockB1" className="optionBlockTextContainer whiteBlock">
+                            <div  id="addedOptionBlockB1" className="optionBlockTextContainer block100">
                                 <div id="addedOptionB1Text" className="blockTextAdded optionBlock">Added</div>
                             </div>
                         </div>
@@ -149,22 +149,22 @@ export class Seesaw extends React.Component<SeesawProps, SeesawState> {
             GSAP.TweenMax.to(swingyPart, offsetTime, {rotation: -15, delay: offsetDelay})
             
             const sideA = document.getElementById("seesawSectionA")
-            GSAP.TweenMax.to(sideA, offsetTime, {bottom: 70, delay: offsetDelay})
+            GSAP.TweenMax.to(sideA, offsetTime, {bottom: 60, delay: offsetDelay})
 
             const sideB = document.getElementById("seesawSectionB")
-            GSAP.TweenMax.to(sideB, offsetTime, {bottom: 147, delay: offsetDelay})
+            GSAP.TweenMax.to(sideB, offsetTime, {bottom: 120, delay: offsetDelay})
 
             const optionsA = document.getElementById("seesawOptionsA")
     
             GSAP.TweenMax.to(fadeInB, addedBTime, {opacity: 1, delay:addedBDelay})
 
             GSAP.TweenMax.to(swingyPart, resetTime, {rotation: 0, delay: resetDelay, onComplete: callback})
-            GSAP.TweenMax.to(sideA, resetTime, {bottom: 100, delay: resetDelay})
-            GSAP.TweenMax.to(sideB, resetTime, {bottom: 100, delay: resetDelay})
+            GSAP.TweenMax.to(sideA, resetTime, {bottom: 84, delay: resetDelay})
+            GSAP.TweenMax.to(sideB, resetTime, {bottom: 84, delay: resetDelay})
 
 
-            GSAP.TweenMax.to(recolorA, resetTime, {backgroundColor: "rgba(255, 255, 255, 0.6)", delay: resetDelay})
-            GSAP.TweenMax.to(recolorB, resetTime, {backgroundColor: "rgba(255, 255, 255, 0.6)", delay: resetDelay})
+            GSAP.TweenMax.to(recolorA, resetTime, {backgroundColor: "rgba(115.0, 0, 215.0, 0.40)", delay: resetDelay})
+            GSAP.TweenMax.to(recolorB, resetTime, {backgroundColor: "rgba(115.0, 0, 215.0, 0.40)", delay: resetDelay})
 
         }
         else {
@@ -183,7 +183,7 @@ interface Seesaw1OptionProps {
   class SeesawOption extends React.Component<Seesaw1OptionProps>  {
     render () {
       return (
-        <div className="optionBlockTextContainer white60Block">
+        <div className="optionBlockTextContainer block40">
             <div className="blockText optionBlock">{this.props.value}</div>
         </div>
       )
@@ -203,10 +203,10 @@ interface Seesaw1OptionProps {
         if(shouldRender && hasNext) {
             return (
                 <div className="option2Blocks">
-                <div className="optionBlockTextContainer">
+                <div className="optionBlockTextContainer block30">
                     <div className="blockText optionBlock">{this.props.items[this.props.index]}</div>
                 </div>
-                <div className="optionBlockTextContainer white80Block">
+                <div className="optionBlockTextContainer block25">
                     <div className="blockText optionBlock">{this.props.items[this.props.index + 1]}</div>
                 </div>
                 </div>

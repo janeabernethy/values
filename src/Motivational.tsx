@@ -123,17 +123,17 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
         const currentOption = getValues().filter(value => value.key === key)[0];
         const items = currentOption.options
         return(
-            <div className="additionalContent">
-                <div className="additionalLeft">
+            <div className="motivationalContent">
+                <div className="motivationalLeft">
                     <div className="additionalHeader">Your Motivational Values</div>
                     <div className="additionalInstructions">
                         <p className="additionalInstruction">A motivational value is the key drivers that caused you to react or feel a certain way. Surfacing them from events from the past are a useful place to start. </p>
-                        <p className="additionalInstruction">Think of a time in the past, in this context, when you felt super motivated and happy. What caused you to feel this way? If there is a new value, add it to your list. If it’s a value that you have already written down, don’t add it.  </p>
+                        <p className="motivationalInstruction">Think of a time in the past, in this context, when you felt super motivated and happy. What caused you to feel this way? If there is a new value, add it to your list. If it’s a value that you have already written down, don’t add it.  </p>
                     </div>
                     <div className="additionalInput">
                     <div>
-                    <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="one"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input1Disabled()}/>
+                    <form className="motivationalForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="one"  className="motivationalInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input1Disabled()}/>
                         <div className="additionalSubmitDiv">
                             <input type="submit" className="valueSubmit" value="Next" hidden={this.submit1Hidden()}/>
                         </div>
@@ -141,10 +141,10 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     </div>
                     <div hidden={this.isStep2Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Repeat again</p>
+                        <p className="motivationalInstruction">Repeat again</p>
                     </div>
-                    <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="two"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
+                    <form className="motivationalForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="two"  className="motivationalInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded} disabled={this.input2Disabled()}/>
                         <div className="additionalSubmitDiv">
                             <input type="submit" className="valueSubmit" value="Next" hidden={this.submit2Hidden()}/>
                         </div>
@@ -152,10 +152,10 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     </div>
                     <div hidden={this.isStep3Hidden()}>
                     <div className="additionalInstructions">
-                        <p className="additionalInstruction">Repeat again</p>
+                        <p className="motivationalInstruction">Repeat again</p>
                     </div>
-                    <form className="additionalForm" autoComplete="off" onSubmit={this.onSubmit}>
-                        <input name="three"  className="additionalValueInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
+                    <form className="motivationalForm" autoComplete="off" onSubmit={this.onSubmit}>
+                        <input name="three"  className="motivationalInput" type="text" placeholder="Enter a value" onChange={this.handleItemAdded}/>
                         <div className="additionalSubmitDiv">
                             <input type="submit" className="valueSubmit" value="Next" hidden={this.submit3Hidden()}/>
                         </div>
@@ -163,7 +163,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     </div>
                 </div>
                 </div>
-                <div className="additionalRight"> 
+                <div className="motivationalRight"> 
                 <Frame items={this.state.items} />        
 
                 </div>
