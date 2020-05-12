@@ -53,7 +53,7 @@ class Results extends React.Component<RouteComponentProps<ResultProps>> {
         return(
             <div className="resultsContent">
                 <div className="resultsHeader">Your values in order</div>
-                <div className="resultsDescription">These are your values in order. The first 5 are you non negotiables</div>
+                <div className="resultsDescription">These are your values in order. The first 5 are your non negotiables</div>
                 <div className="resultsList">
                 {
                 orderedValues.map((aValue, index) =>
