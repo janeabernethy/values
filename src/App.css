@@ -52,7 +52,6 @@ button:focus {outline:0;}
   padding-right: 9px;
   text-align: center;
   font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-family:-apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .options {

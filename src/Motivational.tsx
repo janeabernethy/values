@@ -128,7 +128,7 @@ class MotivationalValues extends React.Component<RouteComponentProps<Motivationa
                     <div className="additionalHeader">Your Motivational Values</div>
                     <div className="additionalInstructions">
                         <p className="additionalInstruction">A motivational value is the key drivers that caused you to react or feel a certain way. Surfacing them from events from the past are a useful place to start. </p>
-                        <p className="motivationalInstruction">Think of a time in the past, in this context, when you felt super motivated and happy. What caused you to feel this way? If there is a new value, add it to your list. If it’s a value that you have already written down, don’t add it.  </p>
+                        <p className="additionalInstruction">Think of a time in the past, in this context, when you felt super motivated and happy. What caused you to feel this way? If there is a new value, add it to your list. If it’s a value that you have already written down, don’t add it.  </p>
                     </div>
                     <div className="additionalInput">
                     <div>
