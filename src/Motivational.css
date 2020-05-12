@@ -16,11 +16,14 @@
 }
 
 .motivationalRight {
-    min-width: 400px;
-    max-width: 400px;
+
     height: 100%; 
     align-items: flex-end;
     display: flex;
+    padding-left: 36px;
+    padding-right: 12px;
+    padding-bottom: 18px;
+    box-sizing: border-box;
 }
 
 
